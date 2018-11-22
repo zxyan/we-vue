@@ -1,4 +1,4 @@
-import Vue, {VueConstructor} from 'vue'
+import Vue, { VueConstructor } from 'vue'
 import * as components from './components'
 
 import WeVue from './components/we-vue'
@@ -9,7 +9,6 @@ if (components) {
     if (component) {
       Object.assign(component, {
         install: (Vue: VueConstructor): void => {
-          // TODO
           Vue.component(key, component as typeof Vue)
         }
       })
@@ -23,9 +22,5 @@ if (components) {
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(WeVue)
 }
-
-import TopTips from './components/top-tips'
-
-export * from './components'
 
 export default WeVue
