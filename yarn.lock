@@ -4570,17 +4570,17 @@ eslint-plugin-typescript@^0.13.0:
   dependencies:
     requireindex "~1.1.0"
 
-eslint-plugin-vue@^4.3.0, eslint-plugin-vue@^4.7.1:
+eslint-plugin-vue@^4.7.1:
   version "4.7.1"
   resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-4.7.1.tgz#c829b9fc62582c1897b5a0b94afd44ecca511e63"
   integrity sha512-esETKhVMI7Vdli70Wt4bvAwnZBJeM0pxVX9Yb0wWKxdCJc2EADalVYK/q2FzMw8oKN0wPMdqVCKS8kmR89recA==
   dependencies:
     vue-eslint-parser "^2.0.3"
 
-eslint-plugin-vue@^5.0.0-0:
-  version "5.0.0-beta.4"
-  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-5.0.0-beta.4.tgz#fdb576b9e723e27140646adab218001dd16a829f"
-  integrity sha512-roXXroqY2AcgF4dk0SG1reeeQz2X3Ef7q9B0GD0+vdc58vApig1hpTReT4Mf0YqTEI80/ldXD1ibV6n4vVUZrw==
+eslint-plugin-vue@^5.0.0-beta.5:
+  version "5.0.0-beta.5"
+  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-5.0.0-beta.5.tgz#d478abfcea7eaa98cbe28eedec4aea0e596fbdb2"
+  integrity sha512-ETVqyctk0cta99tTi3NjDDGyJiQZTHlf6J7fl6Ig58/926U2tjzU3T0A/c6/jkiTw1m9yErxLyF+IPnwX7j6bg==
   dependencies:
     vue-eslint-parser "^3.2.1"
 
@@ -4714,7 +4714,7 @@ espree@^3.5.2, espree@^3.5.4:
     acorn "^5.5.0"
     acorn-jsx "^3.0.0"
 
-espree@^4.0.0:
+espree@^4.0.0, espree@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/espree/-/espree-4.1.0.tgz#728d5451e0fd156c04384a7ad89ed51ff54eb25f"
   integrity sha512-I5BycZW6FCVIub93TeVY1s7vjhP9CY6cXCznIRfiig7nRviKZYdRnj/sHEWC6A7WE9RDWOFq9+7OsWSYz8qv2w==
@@ -5905,9 +5905,9 @@ hoek@5.x.x:
   integrity sha512-Alr4ZQgoMlnere5FZJsIyfIjORBqZll5POhDsF4q64dPuJR6rNxXdDxtHSQq8OXRurhmx+PWYEE8bXRROY8h0w==
 
 hoek@6.x.x:
-  version "6.0.3"
-  resolved "https://registry.npmjs.org/hoek/-/hoek-6.0.3.tgz#7884360426d927865a0a1251fc9c59313af5b798"
-  integrity sha512-TU6RyZ/XaQCTWRLrdqZZtZqwxUVr6PDMfi6MlWNURZ7A6czanQqX4pFE1mdOUQR9FdPCsZ0UzL8jI/izZ+eBSQ==
+  version "6.0.4"
+  resolved "https://registry.npmjs.org/hoek/-/hoek-6.0.4.tgz#8db638130825534575e8e4e80f97ca66108e6382"
+  integrity sha512-9D47elppcwrTx2x9B6TrovxnUtlTBYFcHGgo0+LRA1+YfUkCecT//41ovdh6zbl7whB9Hc2whRO1c6lzPoTgww==
 
 hogan.js@^3.0.2:
   version "3.0.2"
@@ -11972,7 +11972,7 @@ vm-browserify@0.0.4:
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
-  resolved "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
+  resolved "http://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
   integrity sha512-ZezcU71Owm84xVF6gfurBQUGg8WQ+WZGxgDEQu1IHFBZNx7BFZg3L1yHxrCBNNwbwFtE1GuvfJKMtb6Xuwc/Bw==
   dependencies:
     debug "^3.1.0"
@@ -11983,16 +11983,16 @@ vue-eslint-parser@^2.0.3:
     lodash "^4.17.4"
 
 vue-eslint-parser@^3.2.1:
-  version "3.2.2"
-  resolved "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-3.2.2.tgz#47c971ee4c39b0ee7d7f5e154cb621beb22f7a34"
-  integrity sha512-dprI6ggKCTwV22r+i8dtUGquiOCn063xyDmb7BV/BjG5Oc/m5EoMNrWevpvTcrlGuFZmYVPs5fgsu8UIxmMKzg==
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-3.3.0.tgz#06b195d18bb66ac72c6b7f2469b549109a61d72c"
+  integrity sha512-gUsSihfwXmSIbxtqq8YT9CBdkqTHj+6ahj+glY6vJSYu0ylMHQ1A9ClC1YkF5YLRs+WShAwJklXfiL8CEZhgog==
   dependencies:
-    debug "^3.1.0"
+    debug "^4.1.0"
     eslint-scope "^4.0.0"
     eslint-visitor-keys "^1.0.0"
-    espree "^4.0.0"
+    espree "^4.1.0"
     esquery "^1.0.1"
-    lodash "^4.17.10"
+    lodash "^4.17.11"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.1"
@@ -12032,9 +12032,9 @@ vue-loader@^15.2.0, vue-loader@^15.4.2:
     vue-style-loader "^4.1.0"
 
 vue-router@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
-  integrity sha512-vLLoY452L+JBpALMP5UHum9+7nzR9PeIBCghU9ZtJ1eWm6ieUI8Zb/DI3MYxH32bxkjzYV1LRjNv4qr8d+uX/w==
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
+  integrity sha512-opKtsxjp9eOcFWdp6xLQPLmRGgfM932Tl56U9chYTnoWqKxQ8M20N7AkdEbM5beUh6wICoFGYugAX9vQjyJLFg==
 
 vue-style-loader@^4.0.2, vue-style-loader@^4.1.0:
   version "4.1.2"

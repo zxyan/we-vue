@@ -14,13 +14,19 @@ if (components) {
       })
     }
 
-    // todo
+    // TODO
     Vue.use(component)
   }
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(WeVue)
+}
+
+import { WvTopTips } from './components'
+
+export {
+  WvTopTips
 }
 
 export default WeVue

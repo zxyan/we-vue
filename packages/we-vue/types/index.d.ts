@@ -1,5 +1,7 @@
 import Vue, { Component, DirectiveOptions, PluginFunction, VueConstructor } from 'vue'
-import './lib'
+
+// TODO
+// import './lib'
 
 declare const WeVue: WeVue
 export default WeVue
@@ -31,6 +33,8 @@ declare module 'vue/types/vue' {
 export interface WeVueOptions {
   customProperties: boolean
 }
+
+export const WvToptios: Component
 
 export type WeVueGoToEasing =
   'linear' |
