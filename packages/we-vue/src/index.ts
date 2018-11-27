@@ -1,3 +1,4 @@
+import './scss/index.scss'
 import Vue, { VueConstructor } from 'vue'
 import * as components from './components'
 

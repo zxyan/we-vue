@@ -1477,10 +1477,11 @@
   integrity sha1-12jboAQmHAKbU6d8XqLV+e5PPM4=
 
 "@vue/test-utils@^1.0.0-beta.25":
-  version "1.0.0-beta.25"
-  resolved "http://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.25.tgz#4703076de3076bac42cdd242cd53e6fb8752ed8c"
-  integrity sha1-RwMHbeMHa6xCzdJCzVPm+4dS7Yw=
+  version "1.0.0-beta.26"
+  resolved "http://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.26.tgz#1ae7e1dc2bef4f49f9dbfdfecad342d17d6c5c88"
+  integrity sha1-Gufh3CvvT0n52/3+ytNC0X1sXIg=
   dependencies:
+    dom-event-types "^1.0.0"
     lodash "^4.17.4"
 
 "@vue/web-component-wrapper@^1.2.0":
@@ -2839,9 +2840,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, caniuse-lite@^1.0.30000898, caniuse-lite@^1.0.30000899:
-  version "1.0.30000910"
-  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000910.tgz#755d5181d4b006e5a2b59b1ffa05d0a0470039f5"
-  integrity sha1-dV1RgdSwBuWitZsf+gXQoEcAOfU=
+  version "1.0.30000911"
+  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000911.tgz#5dfb8139ee479722da27000ca92dec47913b9605"
+  integrity sha1-XfuBOe5HlyLaJwAMqS3sR5E7lgU=
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -3146,9 +3147,9 @@ commander@^2.12.1, commander@^2.14.1, commander@^2.18.0, commander@^2.19.0, comm
   integrity sha1-9hmKqE5bg8RgVLlN3tv+1e6f8So=
 
 commitizen@^3.0.2:
-  version "3.0.4"
-  resolved "http://registry.npm.taobao.org/commitizen/download/commitizen-3.0.4.tgz#557904e15cc0641d5b7cdcba2f3e74ef3b693d79"
-  integrity sha1-VXkE4VzAZB1bfNy6Lz507ztpPXk=
+  version "3.0.5"
+  resolved "http://registry.npm.taobao.org/commitizen/download/commitizen-3.0.5.tgz#607e07a6d3f2aa201b91a51607dc4d337c84a0ea"
+  integrity sha1-YH4HptPyqiAbkaUWB9xNM3yEoOo=
   dependencies:
     cachedir "2.1.0"
     cz-conventional-changelog "2.1.0"
@@ -4195,6 +4196,11 @@ dom-converter@~0.2:
   dependencies:
     utila "~0.4"
 
+dom-event-types@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/dom-event-types/download/dom-event-types-1.0.0.tgz#5830a0a29e1bf837fe50a70cd80a597232813cae"
+  integrity sha1-WDCgop4b+Df+UKcM2ApZcjKBPK4=
+
 dom-serializer@0:
   version "0.1.0"
   resolved "http://registry.npm.taobao.org/dom-serializer/download/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -4325,9 +4331,9 @@ ejs@^2.6.1:
   integrity sha1-SY7A1JVlWrxvI81hho2SZGQHGqA=
 
 electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.82:
-  version "1.3.84"
-  resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.84.tgz#2e55df59e818f150a9f61b53471ebf4f0feecc65"
-  integrity sha1-LlXfWegY8VCp9htTRx6/Tw/uzGU=
+  version "1.3.85"
+  resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.85.tgz#5c46f790aa96445cabc57eb9d17346b1e46476fe"
+  integrity sha1-XEb3kKqWRFyrxX650XNGseRkdv4=
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -8090,9 +8096,9 @@ mime@1.4.1:
   integrity sha1-Eh+evEnjdm8xGnbh+hyAA8SwOqY=
 
 mime@^2.0.3, mime@^2.3.1:
-  version "2.3.1"
-  resolved "http://registry.npm.taobao.org/mime/download/mime-2.3.1.tgz#b1621c54d63b97c47d3cfe7f7215f7d64517c369"
-  integrity sha1-sWIcVNY7l8R9PP5/chX31kUXw2k=
+  version "2.4.0"
+  resolved "http://registry.npm.taobao.org/mime/download/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
+  integrity sha1-4FH9iBNYWF8yed8zP+aU2gvP/dY=
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -9769,7 +9775,7 @@ pseudomap@^1.0.2:
   resolved "http://registry.npm.taobao.org/pseudomap/download/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
-psl@^1.1.24:
+psl@^1.1.24, psl@^1.1.28:
   version "1.1.29"
   resolved "http://registry.npm.taobao.org/psl/download/psl-1.1.29.tgz#60f580d360170bb722a797cc704411e6da850c67"
   integrity sha1-YPWA02AXC7cip5fMcEQR5tqFDGc=
@@ -9816,7 +9822,7 @@ punycode@1.3.2:
   resolved "http://registry.npm.taobao.org/punycode/download/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
   integrity sha1-llOgNvt8HuQjQvIyXM7v6jkmxI0=
 
-punycode@2.x.x, punycode@^2.1.0:
+punycode@2.x.x, punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
@@ -11326,9 +11332,9 @@ table@^5.0.2:
     string-width "^2.1.1"
 
 tapable@^1.0.0, tapable@^1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/tapable/download/tapable-1.1.0.tgz#0d076a172e3d9ba088fd2272b2668fb8d194b78c"
-  integrity sha1-DQdqFy49m6CI/SJysmaPuNGUt4w=
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/tapable/download/tapable-1.1.1.tgz#4d297923c5a72a42360de2ab52dadfaaec00018e"
+  integrity sha1-TSl5I8WnKkI2DeKrUtrfquwAAY4=
 
 tar@^2.0.0:
   version "2.2.1"
@@ -11537,7 +11543,15 @@ toposort@^1.0.0:
   resolved "http://registry.npm.taobao.org/toposort/download/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
   integrity sha1-LmhELZ9k7HILjMieZEOsbKqVACk=
 
-tough-cookie@>=2.3.3, tough-cookie@^2.3.4, tough-cookie@~2.4.3:
+tough-cookie@>=2.3.3, tough-cookie@^2.3.4:
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/tough-cookie/download/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
+  integrity sha1-zZ+yoKodWhK0c72fuW+j3P9lreI=
+  dependencies:
+    psl "^1.1.28"
+    punycode "^2.1.1"
+
+tough-cookie@~2.4.3:
   version "2.4.3"
   resolved "http://registry.npm.taobao.org/tough-cookie/download/tough-cookie-2.4.3.tgz#53f36da3f47783b0925afa06ff9f3b165280f781"
   integrity sha1-U/Nto/R3g7CSWvoG/587FlKA94E=
@@ -11605,9 +11619,9 @@ ts-jest@^23.10.4:
     yargs-parser "10.x"
 
 ts-loader@^5.3.0:
-  version "5.3.0"
-  resolved "http://registry.npm.taobao.org/ts-loader/download/ts-loader-5.3.0.tgz#4bac24e57bc5189391ab14987d9898ce53ef5cf7"
-  integrity sha1-S6wk5XvFGJORqxSYfZiYzlPvXPc=
+  version "5.3.1"
+  resolved "http://registry.npm.taobao.org/ts-loader/download/ts-loader-5.3.1.tgz#70614c8ec4354a9c8b89c9f97b2becb7a98a3980"
+  integrity sha1-cGFMjsQ1SpyLicn5eyvst6mKOYA=
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
