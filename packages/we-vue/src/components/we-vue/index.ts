@@ -1,14 +1,12 @@
-import TheVue from 'vue'
-
-// types
-import { VueConstructor } from 'vue/types'
+import TheVue, { VueConstructor } from 'vue'
+import * as components from '../index'
 
 // TODO
 const __REQUIRED_VUE__ = '2.5.0'
 const __WE_VUE_VERSION__ = '3.0.0'
 
 const WeVue = {
-  install (Vue, opts = {}) {
+  install (Vue: VueConstructor, opts = {}) {
     if ((this as any).instalLed) {
       return
     }
@@ -20,7 +18,20 @@ const WeVue = {
 
     checkVueVersion(Vue)
 
+    if (components) {
+      for (const key in components) {
+        const component = components[key]
+        if (component) {
+          Object.assign(component, {
+            install: (Vue: VueConstructor): void => {
+              Vue.component(key, component as typeof Vue)
+            }
+          })
+        }
 
+        Vue.use(component)
+      }
+    }
   },
 
   version: __WE_VUE_VERSION__

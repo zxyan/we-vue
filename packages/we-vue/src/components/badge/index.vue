@@ -4,21 +4,15 @@
     :class="{ 'weui-badge_dot': isDot }"
     :style="{ 'background-color': color }"
   >
-    <slot v-if="!isDot"/>
+    <slot v-if="!isDot" />
   </span>
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '../../scss/badge.scss'
 
-import Themeable from '../../mixins/themeable'
-
-import mixins from '../../utils/mixins'
-
-export default mixins(
-  Themeable
-  /* @vue/component */
-).extend({
+export default Vue.extend({
   name: 'wv-badge',
 
   props: {

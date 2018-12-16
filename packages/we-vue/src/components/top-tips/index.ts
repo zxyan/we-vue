@@ -4,8 +4,8 @@ import { isObj } from '../../utils'
 import { CombinedVueInstance, OptionsVue } from 'vue/types/vue'
 
 type TopTipsOptions = {
-  message: string,
   visible?: boolean,
+  message: string,
   duration?: number
 }
 
@@ -13,18 +13,10 @@ type TopTipsType = CombinedVueInstance<Vue, {}, {}, {}, {
   visible: boolean,
   timer: any
 }>
-// {
-//   defaultOptions: TopTipsOptions,
-//   currentOptions: TopTipsOptions,
-//   close: Function,
-//   setDefaultOptions: Function,
-//   resetDefaultOptions: Function,
-//   [key: string]: any
-// }
 
 const defaultOptions: TopTipsOptions = {
-  message: '',
   visible: true,
+  message: '',
   duration: 3000
 }
 
