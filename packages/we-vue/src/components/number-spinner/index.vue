@@ -21,7 +21,8 @@
       @paste="onPaste"
       @keypress="onKeypress"
       v-bind="$attrs"
-      :style="inputStyle">
+      :style="inputStyle"
+    >
     <button
       class="spinner-btn btn-plus"
       @click="increase"
@@ -41,46 +42,46 @@ export default Vue.extend({
   props: {
     min: {
       type: Number,
-      default: 0
+      default: 0,
     },
     max: {
       type: Number,
-      default: 100
+      default: 100,
     },
     step: {
       type: Number,
-      default: 1
+      default: 1,
     },
     inputWidth: {
       type: String,
-      default: '3em'
+      default: '3em',
     },
     readonly: Boolean,
     disabled: Boolean,
     align: {
       type: String,
-      default: 'center'
+      default: 'center',
     },
     fillable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     value: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   data () {
     return {
-      currentValue: this.value
+      currentValue: this.value,
     }
   },
 
   inheritAttrs: false,
 
   model: {
-    event: 'change'
+    event: 'change',
   },
 
   computed: {
@@ -99,7 +100,7 @@ export default Vue.extend({
     inputStyle (): object {
       return {
         width: this.inputWidth,
-        textAlign: this.align
+        textAlign: this.align,
       }
     },
 
@@ -107,7 +108,7 @@ export default Vue.extend({
       const listeners = { ...this.$listeners }
       delete listeners.change
       return listeners
-    }
+    },
   },
 
   created () {
@@ -168,7 +169,7 @@ export default Vue.extend({
       this.currentValue = val
       this.$emit('change', val, oldValue)
       this.$refs.input.value = val
-    }
+    },
   },
 
   watch: {
@@ -189,7 +190,7 @@ export default Vue.extend({
       } else if (val === '') {
         this.currentValue = ''
       }
-    }
-  }
+    },
+  },
 })
 </script>

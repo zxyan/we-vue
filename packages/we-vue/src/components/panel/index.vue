@@ -24,7 +24,7 @@ export default mixins(
   name: 'wv-panel',
 
   props: {
-    title: String
-  }
+    title: String,
+  },
 })
 </script>

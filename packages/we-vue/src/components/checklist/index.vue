@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="title" class="weui-cells__title" v-html="title"/>
+    <div v-if="title" class="weui-cells__title" v-html="title" />
     <div class="weui-cells weui-cells_checkbox">
       <label
         v-for="option in options"
@@ -14,11 +14,12 @@
             class="weui-check"
             v-model="currentValue"
             :disabled="option.disabled"
-            :value="option.value || option">
-          <i class="weui-icon-checked"/>
+            :value="option.value || option"
+          >
+          <i class="weui-icon-checked" />
         </div>
         <div class="weui-cell__bd">
-          <p v-text="option.label || option"/>
+          <p v-text="option.label || option" />
         </div>
         <div class="weui-cell__hd" v-if="align === 'right'">
           <input
@@ -26,8 +27,9 @@
             class="weui-check"
             v-model="currentValue"
             :disabled="option.disabled"
-            :value="option.value || option">
-          <i class="weui-icon-checked"/>
+            :value="option.value || option"
+          >
+          <i class="weui-icon-checked" />
         </div>
       </label>
     </div>
@@ -47,7 +49,7 @@ export default Vue.extend({
       type: Number,
       validator: val => {
         return val >= 0
-      }
+      },
     },
     title: String,
     align: {
@@ -55,16 +57,16 @@ export default Vue.extend({
       default: 'left',
       validator: val => {
         return val === 'left' || val === 'right'
-      }
+      },
     },
     options: {
       type: Array,
-      required: true
+      required: true,
     },
     value: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   computed: {
@@ -79,8 +81,8 @@ export default Vue.extend({
         }
 
         this.$emit('input', val)
-      }
-    }
+      },
+    },
   },
 
   created () {
@@ -92,7 +94,7 @@ export default Vue.extend({
       if (JSON.stringify(val) !== JSON.stringify(oldValue)) {
         this.$emit('change', val)
       }
-    }
-  }
+    },
+  },
 })
 </script>

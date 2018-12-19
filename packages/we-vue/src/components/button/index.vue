@@ -3,7 +3,8 @@
     class="weui-btn"
     :class="classObject"
     @click="handleClick"
-    :disabled="disabled">
+    :disabled="disabled"
+  >
     <i class="weui-loading" v-if="isLoading" />
     <slot />
   </button>
@@ -25,18 +26,18 @@ export default mixins(
   props: {
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     isLoading: Boolean,
     disabled: Boolean,
     mini: Boolean,
-    plain: Boolean
+    plain: Boolean,
   },
 
   methods: {
     handleClick (event) {
       this.$emit('click', event)
-    }
+    },
   },
 
   computed: {
@@ -56,7 +57,7 @@ export default mixins(
       ret['weui-btn_mini'] = this.mini
 
       return ret
-    }
-  }
+    },
+  },
 })
 </script>

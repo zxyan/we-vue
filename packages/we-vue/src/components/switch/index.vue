@@ -1,12 +1,12 @@
 <template>
-  <cell :title="title" v-if="isInCell">
-    <wv-switch
+  <Cell :title="title" v-if="isInCell">
+    <WvSwitch
       :is-in-cell="false"
       slot="ft"
       v-model="currentValue"
       :disabled="disabled"
     />
-  </cell>
+  </Cell>
 
   <div
     class="wv-switch"
@@ -14,7 +14,7 @@
     @click="onClick"
     v-else
   >
-    <div class="background"/>
+    <div class="background" />
     <div
       class="thumb"
       :style="thumbStyle"
@@ -44,7 +44,7 @@ export default mixins(
   name: 'wv-switch',
 
   components: {
-    Cell
+    Cell,
   },
 
   props: {
@@ -52,9 +52,9 @@ export default mixins(
     disabled: Boolean,
     isInCell: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    value: Boolean
+    value: Boolean,
   },
 
   data () {
@@ -63,7 +63,7 @@ export default mixins(
       startX: 0,
       offset: 0,
       startOffset: 0,
-      transition: ''
+      transition: '',
     }
   },
 
@@ -71,9 +71,9 @@ export default mixins(
     thumbStyle () {
       return {
         transition: this.transition,
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate3d(${this.offset}px, 0, 0)`,
       }
-    }
+    },
   },
 
   mounted () {
@@ -137,7 +137,7 @@ export default mixins(
           this.offset = 0
         }
       }
-    }
+    },
   },
 
   watch: {
@@ -150,7 +150,7 @@ export default mixins(
       this.$emit('change', val)
 
       this.offset = val ? THUMB_STROKE : 0
-    }
-  }
+    },
+  },
 })
 </script>

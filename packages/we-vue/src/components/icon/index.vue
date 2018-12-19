@@ -18,9 +18,9 @@ export default mixins(
   props: {
     type: {
       type: String,
-      required: true
+      required: true,
     },
-    large: Boolean
+    large: Boolean,
   },
 
   computed: {
@@ -29,9 +29,9 @@ export default mixins(
 
       return {
         [classType]: true,
-        'weui-icon_msg': this.large
+        'weui-icon_msg': this.large,
       }
-    }
-  }
+    },
+  },
 })
 </script>

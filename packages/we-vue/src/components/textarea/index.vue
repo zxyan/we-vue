@@ -32,34 +32,34 @@ export default Vue.extend({
     placeholder: String,
     showCounter: {
       type: Boolean,
-      default: true
+      default: true,
     },
     rows: {
       type: [Number, String],
-      default: 3
+      default: 3,
     },
     maxLength: {
       type: [Number, String],
-      default: 100
+      default: 100,
     },
     disabled: Boolean,
     readonly: Boolean,
     value: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   data (): object {
     return {
-      currentValue: this.value
+      currentValue: this.value,
     }
   },
 
   computed: {
     length (): number {
       return this.currentValue ? this.currentValue.length : 0
-    }
+    },
   },
 
   mounted (): void {
@@ -77,7 +77,7 @@ export default Vue.extend({
 
     onBlur (): void {
       this.$emit('blur')
-    }
+    },
   },
 
   watch: {
@@ -92,7 +92,7 @@ export default Vue.extend({
       }
 
       this.currentValue = val
-    }
-  }
+    },
+  },
 })
 </script>

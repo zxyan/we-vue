@@ -23,8 +23,8 @@ export default mixins(
       default: 0,
       validator: val => {
         return Number(val) >= 0
-      }
-    }
+      },
+    },
   },
 
   computed: {
@@ -32,7 +32,7 @@ export default mixins(
       const margin = `-${Number(this.gutter) / 2}px`
 
       return this.gutter ? { marginLeft: margin, marginRight: margin } : {}
-    }
-  }
+    },
+  },
 })
 </script>

@@ -7,7 +7,7 @@
       v-if="title"
     />
     <div class="weui-cells">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default mixins(
 
   props: {
     title: String,
-    titleColor: String
-  }
+    titleColor: String,
+  },
 })
 </script>

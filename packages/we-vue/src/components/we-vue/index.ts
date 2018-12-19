@@ -34,7 +34,9 @@ const WeVue = {
     }
   },
 
-  version: __WE_VUE_VERSION__
+  version: __WE_VUE_VERSION__,
+
+  a: 'hello'
 }
 
 export function checkVueVersion (Vue: VueConstructor, requiredVue?: string) {

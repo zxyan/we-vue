@@ -3,8 +3,8 @@
     class="weui-loadmore"
     :class="{'weui-loadmore_line': (type === 'line' || type === 'lineDot'), 'weui-loadmore_dot': type === 'lineDot' }"
   >
-    <wv-spinner type="default" v-if="type === 'default'"/>
-    <span class="weui-loadmore__tips" v-text="type === 'lineDot' ? '' : text"/>
+    <WvSpinner type="default" v-if="type === 'default'" />
+    <span class="weui-loadmore__tips" v-text="type === 'lineDot' ? '' : text" />
   </div>
 </template>
 
@@ -24,18 +24,18 @@ export default mixins(
   name: 'wv-loadmore',
 
   components: {
-    'wv-spinner': Spinner
+    'wv-spinner': Spinner,
   },
 
   props: {
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     text: {
       type: String,
-      default: '正在加载'
-    }
-  }
+      default: '正在加载',
+    },
+  },
 })
 </script>

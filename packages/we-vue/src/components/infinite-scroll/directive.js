@@ -110,7 +110,7 @@ export default {
       el[CONTEXT] = {
         el,
         vm: vnode.context,
-        expression: binding.value
+        expression: binding.value,
       }
     }
     el[CONTEXT].expression = binding.value
@@ -128,5 +128,5 @@ export default {
     if (context.scrollEventTarget) {
       off(context.scrollEventTarget, 'scroll', context.scrollEventListener)
     }
-  }
+  },
 }

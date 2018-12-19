@@ -21,14 +21,14 @@ export default Vue.extend({
   mixins: [Routeable],
 
   props: {
-    isOn: Boolean
+    isOn: Boolean,
   },
 
   methods: {
     onClick () {
       this.$emit('click')
       this.routeLink()
-    }
-  }
+    },
+  },
 })
 </script>

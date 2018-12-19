@@ -12,7 +12,7 @@
       @touchcancel="onTouchend"
       :style="style"
     >
-      <wv-cell
+      <WvCell
         :title="title"
         :value="value"
         :is-link="isLink"
@@ -21,18 +21,18 @@
         ref="cell"
       >
         <template slot="icon">
-          <slot name="icon"/>
+          <slot name="icon" />
         </template>
         <template slot="bd" v-if="!title">
-          <slot name="bd"/>
+          <slot name="bd" />
         </template>
         <template slot="ft" v-if="typeof value === 'undefined'">
-          <slot name="ft"/>
+          <slot name="ft" />
         </template>
-      </wv-cell>
+      </WvCell>
     </div>
     <div class="weui-cell__ft" ref="rightBtns">
-      <slot name="right"/>
+      <slot name="right" />
     </div>
   </div>
 </template>
@@ -51,11 +51,11 @@ export default Vue.extend({
   name: 'wv-cell-swipe',
 
   components: {
-    [Cell.name]: Cell
+    [Cell.name]: Cell,
   },
 
   directives: {
-    Clickoutside
+    Clickoutside,
   },
 
   mixins: [Routeable],
@@ -63,7 +63,7 @@ export default Vue.extend({
   props: {
     title: [String, Number],
     value: [String, Number],
-    isLink: Boolean
+    isLink: Boolean,
   },
 
   data () {
@@ -73,7 +73,7 @@ export default Vue.extend({
       offset: 0,
       startOffset: 0,
       deltaX: 0,
-      transition: ''
+      transition: '',
     }
   },
 
@@ -81,9 +81,9 @@ export default Vue.extend({
     style () {
       return {
         transition: this.transition,
-        transform: `translate3d(${this.offset}px, 0px, 0px)`
+        transform: `translate3d(${this.offset}px, 0px, 0px)`,
       }
-    }
+    },
   },
 
   mounted () {
@@ -132,7 +132,7 @@ export default Vue.extend({
 
     onClickoutside () {
       this.offset = 0
-    }
-  }
+    },
+  },
 })
 </script>

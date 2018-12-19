@@ -1,5 +1,5 @@
 <template>
-  <transition
+  <Transition
     enter-active-class="weui-animate-fade-in"
     leave-active-class="weui-animate-fade-out"
   >
@@ -8,7 +8,7 @@
       v-show="visible"
       v-html="message"
     />
-  </transition>
+  </Transition>
 </template>
 
 <script lang="ts">
@@ -25,8 +25,8 @@ export default Vue.extend({
   props: {
     message: {
       type: String,
-      require: true
-    }
-  }
+      require: true,
+    },
+  },
 })
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition
+    <Transition
       enter-active-class="weui-animate-fade-in"
       leave-active-class="weui-animate-fade-out"
     >
@@ -9,8 +9,8 @@
         v-show="currentValue && type === 'ios'"
         @click="currentValue = false"
       />
-    </transition>
-    <transition
+    </Transition>
+    <Transition
       enter-active-class="weui-animate-slide-up"
       leave-active-class="weui-animate-slide-down"
     >
@@ -20,7 +20,7 @@
         v-show="currentValue"
       >
         <div class="weui-actionsheet__title" v-if="title">
-          <p class="weui-actionsheet__title-text" v-html="title"/>
+          <p class="weui-actionsheet__title-text" v-html="title" />
         </div>
         <div class="weui-actionsheet__menu">
           <div
@@ -32,12 +32,12 @@
           />
         </div>
         <div class="weui-actionsheet__action" v-if="cancelText">
-          <div class="weui-actionsheet__cell" @click="currentValue = false" v-html="cancelText"/>
+          <div class="weui-actionsheet__cell" @click="currentValue = false" v-html="cancelText" />
         </div>
       </div>
-    </transition>
+    </Transition>
 
-    <transition
+    <Transition
       enter-active-class="weui-animate-fade-in"
       leave-active-class="weui-animate-fade-out"
     >
@@ -46,7 +46,7 @@
         v-if="type === 'android'"
         v-show="currentValue"
       >
-        <div class="weui-mask" @click="currentValue = false"/>
+        <div class="weui-mask" @click="currentValue = false" />
         <div class="weui-actionsheet">
           <div class="weui-actionsheet__menu">
             <div
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 
@@ -74,22 +74,22 @@ export default Vue.extend({
   props: {
     type: {
       type: String,
-      default: 'ios'
+      default: 'ios',
     },
     title: String,
     actions: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     cancelText: {
       type: String,
-      default: 'Cancel'
+      default: 'Cancel',
     },
-    value: Boolean
+    value: Boolean,
   },
 
   data: vm => ({
-    currentValue: vm.value
+    currentValue: vm.value,
   }),
 
   watch: {
@@ -99,7 +99,7 @@ export default Vue.extend({
 
     value (val): void {
       this.currentValue = val
-    }
+    },
   },
 
   methods: {
@@ -108,7 +108,7 @@ export default Vue.extend({
         item.method()
       }
       this.currentValue = false
-    }
-  }
+    },
+  },
 })
 </script>

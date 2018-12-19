@@ -1,7 +1,7 @@
 <template>
-  <i class="weui-loading" :style="style" v-if="type === 'default'"/>
+  <i class="weui-loading" :style="style" v-if="type === 'default'" />
   <span v-else class="wv-spinner">
-    <i class="iconfont" :class="fontClassName" :style="style"/>
+    <i class="iconfont" :class="fontClassName" :style="style" />
   </span>
 </template>
 
@@ -16,16 +16,16 @@ export default Vue.extend({
   props: {
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     size: {
       type: Number,
-      default: 17
+      default: 17,
     },
     color: {
       type: String,
-      default: '#aaa'
-    }
+      default: '#aaa',
+    },
   },
 
   computed: {
@@ -47,9 +47,9 @@ export default Vue.extend({
     style () {
       return {
         fontSize: this.size + 'px',
-        color: this.color
+        color: this.color,
       }
-    }
-  }
+    },
+  },
 })
 </script>

@@ -24,11 +24,12 @@
         @focus="onFocus"
         @blur="onBlur"
         @change="onChange"
-        @input="handleInput">
+        @input="handleInput"
+      >
     </div>
     <div class="weui-cell__ft">
-      <wv-icon type="warn" v-if="!valid"/>
-      <slot name="ft"/>
+      <WvIcon type="warn" v-if="!valid" />
+      <slot name="ft" />
     </div>
   </div>
 </template>
@@ -49,25 +50,25 @@ export default mixins(
   name: 'wv-input',
 
   components: {
-    [icon.name]: icon
+    [icon.name]: icon,
   },
 
   props: {
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     label: String,
     labelWidth: {
       type: Number,
-      default: 105
+      default: 105,
     },
     placeholder: String,
     value: String,
     name: String,
     autoComplete: {
       type: String,
-      default: 'off'
+      default: 'off',
     },
     maxlength: Number,
     minlength: Number,
@@ -76,7 +77,7 @@ export default mixins(
     disabled: Boolean,
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     pattern: String,
     validateMode: {
@@ -86,17 +87,17 @@ export default mixins(
           onFocus: true,
           onBlur: true,
           onChange: true,
-          onInput: true
+          onInput: true,
         }
-      }
-    }
+      },
+    },
   },
 
   data () {
     return {
       active: false,
       valid: true,
-      currentValue: this.value
+      currentValue: this.value,
     }
   },
 
@@ -177,7 +178,7 @@ export default mixins(
       }
 
       this.valid = true
-    }
+    },
   },
 
   watch: {
@@ -187,7 +188,7 @@ export default mixins(
 
     value (val) {
       this.currentValue = val
-    }
-  }
+    },
+  },
 })
 </script>

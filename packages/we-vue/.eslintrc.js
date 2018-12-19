@@ -38,6 +38,7 @@ module.exports = {
         "max": 1,
         "allowFirstLine": false
       }
-    }]
+    }],
+    'comma-dangle': ['warn', 'always-multiline'],
   }
 }

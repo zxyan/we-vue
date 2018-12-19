@@ -1,7 +1,7 @@
 <template>
   <div class="wv-circle" :style="style">
     <svg :width="diameter" :height="diameter" :viewBox="'0 0 ' + diameter + ' ' + diameter">
-      <path :d="pathString" :stroke="trailColor" :stroke-width="lineWidth" fill="none"/>
+      <path :d="pathString" :stroke="trailColor" :stroke-width="lineWidth" fill="none" />
       <path
         :d="pathString"
         stroke-linecap="round"
@@ -15,8 +15,9 @@
         text-anchor="middle"
         dominant-baseline="middle"
         x="50%"
-        y="50%">
-        <slot/>
+        y="50%"
+      >
+        <slot />
       </text>
     </svg>
   </div>
@@ -33,37 +34,37 @@ export default Vue.extend({
   props: {
     diameter: {
       type: Number,
-      default: 100
+      default: 100,
     },
     lineWidth: {
       type: Number,
-      default: 4
+      default: 4,
     },
     strokeColor: {
       type: String,
-      default: '#3FC7FA'
+      default: '#3FC7FA',
     },
     trailColor: {
       type: String,
-      default: '#D9D9D9'
+      default: '#D9D9D9',
     },
     fillColor: {
       type: String,
-      default: 'transparent'
+      default: 'transparent',
     },
     speed: {
       type: Number,
-      default: 500
+      default: 500,
     },
     value: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   data () {
     return {
-      currentValue: this.value
+      currentValue: this.value,
     }
   },
 
@@ -71,7 +72,7 @@ export default Vue.extend({
     style () {
       return {
         width: this.diameter + 'px',
-        height: this.diameter + 'px'
+        height: this.diameter + 'px',
       }
     },
 
@@ -100,9 +101,9 @@ export default Vue.extend({
           this.len}px`,
         transition: `stroke-dashoffset ${this.speed}ms ease 0s, stroke ${
           this.speed
-        }ms ease`
+        }ms ease`,
       }
-    }
+    },
   },
 
   watch: {
@@ -112,7 +113,7 @@ export default Vue.extend({
 
     value (val) {
       this.currentValue = val
-    }
-  }
+    },
+  },
 })
 </script>

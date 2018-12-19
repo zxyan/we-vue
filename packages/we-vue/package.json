@@ -24,8 +24,8 @@
   "types": "types/index.d.ts",
   "scripts": {
     "serve": "cross-env NODE_ENV=development webpack --config build/webpack.dev.conf.js --progress --hide-modules --colors --watch",
-    "lint": "eslint --ext .js,.vue packages demo docs test/unit/specs",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint --ext .js,.vue src test/unit/specs",
+    "lint:fix": "yarn run lint -- --fix",
     "build": "concurrently \"yarn build:dist --no-progress\" \"yarn build:lib\" -n \"dist,lib\" --kill-others-on-fail -r",
     "build:dist": "rimraf dist && cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress --hide-modules",
     "build:lib": "node build/build-lib.js",

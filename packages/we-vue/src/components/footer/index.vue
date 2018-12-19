@@ -5,9 +5,10 @@
         v-for="item in links"
         :key="item.text"
         :text="item.text"
-        :to="item.link"/>
+        :to="item.link"
+      />
     </p>
-    <p class="weui-footer__text" v-html="text"/>
+    <p class="weui-footer__text" v-html="text" />
   </div>
 </template>
 
@@ -26,15 +27,15 @@ export default mixins(
   name: 'wv-footer',
 
   components: {
-    FooterLink
+    FooterLink,
   },
 
   props: {
     text: String,
     links: {
       type: Array,
-      default: () => []
-    }
-  }
+      default: () => [],
+    },
+  },
 })
 </script>

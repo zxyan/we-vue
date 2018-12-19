@@ -21,12 +21,12 @@ export default mixins(
   props: {
     flex: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     offset: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   computed: {
@@ -40,12 +40,12 @@ export default mixins(
       let ret = this.gutter
         ? {
           paddingLeft: padding,
-          paddingRight: padding
+          paddingRight: padding,
         }
         : {}
 
       return { ...ret, ...{ flex: Number(this.flex), marginLeft: this.offset } }
-    }
-  }
+    },
+  },
 })
 </script>

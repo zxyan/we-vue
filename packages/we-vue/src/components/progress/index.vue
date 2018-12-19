@@ -19,19 +19,19 @@ export default Vue.extend({
 
   props: {
     percent: {
-      type: [Number, String]
+      type: [Number, String],
     },
     showClear: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   methods: {
     onCancelClick (event) {
       event.preventDefault()
       this.$emit('cancel', this)
-    }
-  }
+    },
+  },
 })
 </script>

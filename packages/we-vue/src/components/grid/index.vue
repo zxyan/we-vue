@@ -15,6 +15,6 @@ export default mixins(
   Themeable
   /* @vue/component */
 ).extend({
-  name: 'wv-grid'
+  name: 'wv-grid',
 })
 </script>

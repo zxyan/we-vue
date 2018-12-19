@@ -16,14 +16,14 @@ export default mixins(
   name: 'wv-footer-link',
 
   props: {
-    text: String
+    text: String,
   },
 
   methods: {
     onClick () {
       this.$emit('click')
       this.routeLink()
-    }
-  }
+    },
+  },
 })
 </script>

@@ -11,7 +11,8 @@ type TopTipsOptions = {
 
 type TopTipsType = CombinedVueInstance<Vue, {}, {}, {}, {
   visible: boolean,
-  timer: any
+  timer: any,
+  defaultOptions: TopTipsOptions,
 }>
 
 const defaultOptions: TopTipsOptions = {
@@ -43,37 +44,45 @@ const TopTips: (options: TopTipsOptions | string) => TopTipsType = options => {
     ...parseOptions(options)
   }
 
-  // if (!instance) {
-  //   createInstance()
-  // }
-  //
-  // Object.assign(instance, options)
-  // clearTimeout(instance.timer)
-  //
-  // Object.assign(instance, { ...options })
-  //
-  // if (options.duration > 0) {
-  //   instance.timer = setTimeout(() => {
-  //     instance.visible = false
-  //   }, options.duration)
-  // }
-  //
-  // return instance
+  if (!instance) {
+    createInstance()
+  }
+
+  Object.assign(instance, options)
+  clearTimeout(instance.timer)
+
+  Object.assign(instance, { ...options })
+
+  if (options.duration > 0) {
+    instance.timer = setTimeout(() => {
+      instance.visible = false
+    }, options.duration)
+  }
+
+  return instance
 }
 
-// TopTips.close = () => {
-//   if (instance) {
-//     instance.visible = false
-//   }
-// }
-//
-// TopTips.setDefaultOptions = options => {
-//   Object.assign(TopTips.currentOptions, options)
-// }
-//
-// TopTips.resetDefaultOptions = () => {
-//   TopTips.currentOptions = { ...defaultOptions }
-// }
+Object.assign(TopTips, {
+  close: () => {
+    if (instance) {
+      instance.visible = false
+    }
+  }
+})
+
+Object.assign(TopTips, {
+  setDefaultOptions: (options) => {
+    // TODO:
+    // Object.assign(TopTips.currentOptions, options)
+  }
+})
+
+Object.assign(TopTips, {
+  resetDefaultOptions: () => {
+    // TODO:
+    // TopTips.currentOptions = { ...defaultOptions }
+  }
+})
 
 Vue.prototype.$toptips = TopTips
 

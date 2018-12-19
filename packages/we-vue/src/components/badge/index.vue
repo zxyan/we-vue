@@ -17,7 +17,7 @@ export default Vue.extend({
 
   props: {
     color: String,
-    isDot: Boolean
-  }
+    isDot: Boolean,
+  },
 })
 </script>

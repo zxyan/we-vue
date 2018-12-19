@@ -4,13 +4,14 @@
     @touchstart="onTouchstart"
     @touchmove="onTouchmove"
     @touchend="onTouchend"
-    @touchcancel="onTouchend">
+    @touchcancel="onTouchend"
+  >
     <div
       :style="wrapperStyle"
       class="wv-swipe__wrapper"
       @transitionend="$emit('change', activeIndicator)"
     >
-      <slot/>
+      <slot />
     </div>
     <div class="wv-swipe__indicators" v-if="showIndicators && count > 1">
       <i
@@ -36,21 +37,21 @@ export default Vue.extend({
     autoplay: Number,
     defaultIndex: {
       type: Number,
-      default: 0
+      default: 0,
     },
     showIndicators: {
       type: Boolean,
-      default: true
+      default: true,
     },
     duration: {
       type: Number,
-      default: 500
+      default: 500,
     },
     prevent: Boolean,
     noDragWhenSingle: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data () {
@@ -63,7 +64,7 @@ export default Vue.extend({
       deltaX: 0,
       swipes: [],
       direction: '',
-      currentDuration: 0
+      currentDuration: 0,
     }
   },
 
@@ -82,7 +83,7 @@ export default Vue.extend({
 
     defaultIndex () {
       this.initialize()
-    }
+    },
   },
 
   computed: {
@@ -95,7 +96,7 @@ export default Vue.extend({
         paddingLeft: this.count > 1 ? this.width + 'px' : 0,
         width: this.count > 1 ? (this.count + 2) * this.width + 'px' : '100%',
         transitionDuration: `${this.currentDuration}ms`,
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate3d(${this.offset}px, 0, 0)`,
       }
 
       if (this.height) {
@@ -107,7 +108,7 @@ export default Vue.extend({
 
     activeIndicator (): number {
       return (this.active + this.count) % this.count
-    }
+    },
   },
 
   methods: {
@@ -221,7 +222,7 @@ export default Vue.extend({
 
     range (num: number, arr: number[]): number {
       return Math.min(Math.max(num, arr[0]), arr[1])
-    }
-  }
+    },
+  },
 })
 </script>

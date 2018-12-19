@@ -23,7 +23,9 @@
       </div>
     </div>
     <div class="weui-slider-box__value" v-if="showValue">
-      <slot name="value-box">{{ value }}</slot>
+      <slot name="value-box">
+        {{ value }}
+      </slot>
     </div>
   </div>
 </template>
@@ -44,38 +46,38 @@ export default Vue.extend({
       default: 0,
       validator: value => {
         return value >= 0
-      }
+      },
     },
     max: {
       type: Number,
-      default: 100
+      default: 100,
     },
     step: {
       type: Number,
       default: 1,
       validator: value => {
         return value > 0
-      }
+      },
     },
     value: {
-      type: Number
+      type: Number,
     },
     showValue: {
       type: Boolean,
-      default: true
+      default: true,
     },
     enableClick: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   data () {
     return {
       handlerStartPos: 0,
       sliderLeft: 0,
-      sliderLength: 0
+      sliderLength: 0,
     }
   },
 
@@ -88,7 +90,7 @@ export default Vue.extend({
 
     stepWidth () {
       return (this.sliderLength * this.step) / (this.max - this.min)
-    }
+    },
   },
 
   created () {
@@ -145,7 +147,7 @@ export default Vue.extend({
 
       this.$emit('input', value)
       this.$emit('change', value)
-    }
-  }
+    },
+  },
 })
 </script>
