@@ -1,9 +1,12 @@
-import TheVue, { VueConstructor } from 'vue'
+import TheVue from 'vue'
 import * as components from '../index'
 
 // TODO
 const __REQUIRED_VUE__ = '2.5.0'
 const __WE_VUE_VERSION__ = '3.0.0'
+
+// types
+import { VueConstructor } from 'vue/types'
 
 const WeVue = {
   install (Vue: VueConstructor, opts = {}) {
@@ -36,7 +39,7 @@ const WeVue = {
 
   version: __WE_VUE_VERSION__,
 
-  a: 'hello'
+  ...components
 }
 
 export function checkVueVersion (Vue: VueConstructor, requiredVue?: string) {

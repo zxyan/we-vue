@@ -14,13 +14,6 @@
 <script>
 // import { TopTips } from 'we-vue'
 import { WvToptios } from 'we-vue'
-import WeVue from 'we-vue'
-
-import { a } from 'we-vue'
-
-console.log(a)
-
-console.log(WvToptios)
 
 export default {
   // TODO
