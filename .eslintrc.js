@@ -47,5 +47,23 @@ module.exports = {
         "allowFirstLine": false
       }
     }]
-  }
+  },
+  override: [
+    {
+      files: '**/*.ts',
+      rules: {
+        'no-undef': 'off',
+        'space-infix-ops': 'off',
+        'import/export': 'off',
+        'no-unused-vars': 'off',
+        'typescript/adjacent-overload-signatures': 'error',
+        'typescript/member-delimiter-style': ['error', {
+          delimiter: 'none'
+        }],
+        'typescript/member-ordering': 'error',
+        'typescript/type-annotation-spacing': 'error',
+        'strict': 'off'
+      }
+    }
+  ]
 }

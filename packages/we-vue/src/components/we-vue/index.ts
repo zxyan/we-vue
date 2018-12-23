@@ -1,4 +1,4 @@
-import TheVue from 'vue'
+import OurVue from 'vue'
 import * as components from '../index'
 
 // TODO
@@ -15,7 +15,7 @@ const WeVue = {
     }
     (this as any).installed = true
 
-    if (TheVue !== Vue) {
+    if (OurVue !== Vue) {
       console.error('Muntiply instance of Vue detected.')
     }
 

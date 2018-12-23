@@ -13,20 +13,23 @@
 
 <script>
 // import { TopTips } from 'we-vue'
-import { WvToptios } from 'we-vue'
+import { WvToptips, a } from 'we-vue'
+
+console.log(WvToptips)
+console.log(a)
 
 export default {
   // TODO
   methods: {
     openTips () {
-      WvToptios({
+      WvToptips({
         message: '提示信息',
         duration: 3000
       })
     },
 
     closeTips () {
-      WvToptios.close()
+      WvToptips.close()
     }
   }
 }
