@@ -7,9 +7,10 @@ const __WE_VUE_VERSION__ = '3.0.0'
 
 // types
 import { VueConstructor } from 'vue/types'
+import { WeVue as WeVuePlugin, WeVueUseOptions } from 'we-vue/types'
 
-const WeVue = {
-  install (Vue: VueConstructor, opts = {}) {
+const WeVue: WeVuePlugin = {
+  install (Vue, opts = {}) {
     if ((this as any).instalLed) {
       return
     }
@@ -19,27 +20,22 @@ const WeVue = {
       console.error('Muntiply instance of Vue detected.')
     }
 
-    checkVueVersion(Vue)
-
-    if (components) {
-      for (const key in components) {
-        const component = components[key]
-        if (component) {
-          Object.assign(component, {
-            install: (Vue: VueConstructor): void => {
-              Vue.component(key, component as typeof Vue)
-            }
-          })
+    // @ts-ignore
+    (function registerComponents (components: VuetifyUseOptions['components']) {
+      if (components) {
+        for (const key in components) {
+          const component = components[key]
+          if (component && !registerComponents(component.$_vuetify_subcomponents)) {
+            Vue.component(key, component as typeof Vue)
+          }
         }
-
-        Vue.use(component)
+        return true
       }
-    }
+      return false
+    })(opts.components)
   },
 
-  version: __WE_VUE_VERSION__,
-
-  ...components
+  version: __WE_VUE_VERSION__
 }
 
 export function checkVueVersion (Vue: VueConstructor, requiredVue?: string) {

@@ -48,7 +48,7 @@ module.exports = {
       }
     }]
   },
-  override: [
+  overrides: [
     {
       files: '**/*.ts',
       rules: {

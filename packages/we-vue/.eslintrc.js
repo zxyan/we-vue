@@ -1,25 +1,23 @@
 // https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
-  root: true,
+  root: false,
   parserOptions: {
-    parser: 'babel-eslint',
-    ecmaVersion: 2018,
+    parser: 'typescript-eslint-parser',
+    ecmaVersion: 2017,
     sourceType: 'module'
   },
+  extends: [
+    'standard',
+    'plugin:vue/strongly-recommended'
+  ],
   env: {
     es6: true,
-    node: true
+    browser: true
   },
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/strongly-recommended',
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
   // required to lint *.vue files
   plugins: [
+    'typescript',
     'vue'
   ],
   // add your custom rules here
@@ -40,5 +38,22 @@ module.exports = {
       }
     }],
     'comma-dangle': ['warn', 'always-multiline'],
-  }
+  },
+  overrides: [
+    {
+      files: '**/*.ts',
+      rules: {
+        'no-undef': 'off',
+        'space-infix-ops': 'off',
+        'import/export': 'off',
+        'no-unused-vars': 'off',
+        'typescript/adjacent-overload-signatures': 'error',
+        'typescript/member-delimiter-style': ['error', {
+          delimiter: 'none'
+        }],
+        'typescript/member-ordering': 'error',
+        'typescript/type-annotation-spacing': 'error'
+      }
+    }
+  ]
 }
