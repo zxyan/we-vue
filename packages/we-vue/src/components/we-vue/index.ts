@@ -1,13 +1,13 @@
 import OurVue from 'vue'
 import * as components from '../index'
 
-// TODO
-const __REQUIRED_VUE__ = '2.5.0'
-const __WE_VUE_VERSION__ = '3.0.0'
-
 // types
 import { VueConstructor } from 'vue/types'
 import { WeVue as WeVuePlugin, WeVueUseOptions } from 'we-vue/types'
+
+// TODO
+const __REQUIRED_VUE__ = '2.5.0'
+const __WE_VUE_VERSION__ = '3.0.0'
 
 const WeVue: WeVuePlugin = {
   install (Vue, opts = {}) {
@@ -21,11 +21,12 @@ const WeVue: WeVuePlugin = {
     }
 
     // @ts-ignore
-    (function registerComponents (components: VuetifyUseOptions['components']) {
+    (function registerComponents (components: WeVueUseOptions['components']) {
+      console.log(components)
       if (components) {
         for (const key in components) {
           const component = components[key]
-          if (component && !registerComponents(component.$_vuetify_subcomponents)) {
+          if (component && !registerComponents(component.$_we_vue_subcomponents)) {
             Vue.component(key, component as typeof Vue)
           }
         }
@@ -35,7 +36,7 @@ const WeVue: WeVuePlugin = {
     })(opts.components)
   },
 
-  version: __WE_VUE_VERSION__
+  version: __WE_VUE_VERSION__,
 }
 
 export function checkVueVersion (Vue: VueConstructor, requiredVue?: string) {

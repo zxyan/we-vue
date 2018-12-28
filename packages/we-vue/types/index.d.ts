@@ -6,7 +6,7 @@ import Vue, { Component, DirectiveOptions, PluginFunction, VueConstructor } from
 declare const WeVue: WeVue
 export default WeVue
 export interface WeVue {
-  install: PluginFunction<WeVueUseOptions>,
+  install: PluginFunction<WeVueUseOptions>
   version: string
 }
 
@@ -34,8 +34,6 @@ export interface WeVueOptions {
   customProperties: boolean
 }
 
-export const WvToptios: Component
-
 export type WeVueGoToEasing =
   'linear' |
   'easeInQuad' |
@@ -52,7 +50,7 @@ export type WeVueGoToEasing =
   'easeInOutQuint'
 
 export interface WeVueGoToOptions {
-  duration?: number,
-  offset?: number,
+  duration?: number
+  offset?: number
   easing?: WeVueGoToEasing
 }
