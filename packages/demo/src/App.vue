@@ -16,6 +16,14 @@
 <script>
 import { mapState } from 'vuex'
 
+// import { WvButton } from 'we-vue'
+//
+// // console.log(WvButton)
+
+import WeVue from 'we-vue'
+
+console.log(WeVue)
+
 export default {
   data () {
     return {

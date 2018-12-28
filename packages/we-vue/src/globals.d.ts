@@ -4,13 +4,13 @@ import {
   VueConstructor,
   ComponentOptions,
   FunctionalComponentOptions,
-  VNodeData
+  VNodeData,
 } from 'vue'
 import { CombinedVueInstance, Vue } from 'vue/types/vue'
 import {
   RecordPropsDefinition,
   ThisTypedComponentOptionsWithArrayProps,
-  ThisTypedComponentOptionsWithRecordProps
+  ThisTypedComponentOptionsWithRecordProps,
 } from 'vue/types/options'
 import { TouchStoredHandlers } from './directives/touch'
 
@@ -54,7 +54,7 @@ declare global {
 
   export type Dictionary<T> = Record<string, T>
 
-  export const __VUETIFY_VERSION__: string
+  export const __WE_VUE_VERSION__: string
   export const __REQUIRED_VUE__: string
 }
 

@@ -22,7 +22,7 @@ const WeVue: WeVuePlugin = {
 
     // @ts-ignore
     (function registerComponents (components: WeVueUseOptions['components']) {
-      console.log(components)
+      console.log('COMPONENTS', components)
       if (components) {
         for (const key in components) {
           const component = components[key]

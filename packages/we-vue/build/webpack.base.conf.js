@@ -4,6 +4,8 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const { VueLoaderPlugin } = require('vue-loader')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
+const { DefinePlugin } = require('webpack')
+const weVuePackage = require('../package')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -86,6 +88,11 @@ module.exports = {
       vue: true,
       tslint: false, // TODO
       checkSyntacticErrors: isProd
+    }),
+    new DefinePlugin({
+      fuck: "'fuck hello'",
+      __WE_VUE_VERSION__: JSON.stringify(weVuePackage.version),
+      __REQUIRED_VUE__: JSON.stringify(weVuePackage.peerDependencies.vue),
     })
   ]
 }
