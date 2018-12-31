@@ -28,7 +28,7 @@
       >
     </div>
     <div class="weui-cell__ft">
-      <WvIcon type="warn" v-if="!valid" />
+      <wv-icon type="warn" v-if="!valid" />
       <slot name="ft" />
     </div>
   </div>
@@ -39,7 +39,7 @@ import '../../scss/input.scss'
 
 import Themeable from '../../mixins/themeable'
 
-import icon from '../icon/index'
+import WvIcon from '../icon/index'
 
 import mixins from '../../utils/mixins'
 
@@ -50,7 +50,7 @@ export default mixins(
   name: 'wv-input',
 
   components: {
-    [icon.name]: icon,
+    WvIcon,
   },
 
   props: {

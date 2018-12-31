@@ -1,7 +1,7 @@
 import Vue, { Component, DirectiveOptions, PluginFunction, VueConstructor } from 'vue'
 
 // TODO
-// import './lib'
+import './lib'
 
 declare const WeVue: WeVue
 export default WeVue
@@ -32,25 +32,4 @@ declare module 'vue/types/vue' {
 
 export interface WeVueOptions {
   customProperties: boolean
-}
-
-export type WeVueGoToEasing =
-  'linear' |
-  'easeInQuad' |
-  'easeOutQuad' |
-  'easeInOutQuad' |
-  'easeInCubic' |
-  'easeOutCubic' |
-  'easeInOutCubic' |
-  'easeInQuart' |
-  'easeOutQuart' |
-  'easeInOutQuart' |
-  'easeInQuint' |
-  'easeOutQuint' |
-  'easeInOutQuint'
-
-export interface WeVueGoToOptions {
-  duration?: number
-  offset?: number
-  easing?: WeVueGoToEasing
 }

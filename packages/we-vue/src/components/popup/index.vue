@@ -34,38 +34,38 @@ export default mixins(
       default: 'auto',
       validator: val => {
         return /^(auto)|(\d+(px|vh|%)?)$/.test(val)
-      }
+      },
     },
     mask: {
       type: Boolean,
-      default: true
+      default: true,
     },
     lockOnScroll: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClickMask: {
       type: Boolean,
-      default: true
+      default: true,
     },
     maskClass: {
       type: String,
-      default: 'weui-mask'
-    }
+      default: 'weui-mask',
+    },
   },
 
   computed: {
     style (): object {
       return {
-        height: /^\d+$/.test(this.height) ? parseInt((this as any).height) + 'px' : (this as any).height
+        height: /^\d+$/.test(this.height) ? parseInt((this as any).height) + 'px' : (this as any).height,
       }
-    }
+    },
   },
 
   mounted (): void {
     if (this.visible) {
       this.open()
     }
-  }
+  },
 })
 </script>

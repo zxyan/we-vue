@@ -1,12 +1,12 @@
 <template>
-  <Cell :title="title" v-if="isInCell">
-    <WvSwitch
+  <cell :title="title" v-if="isInCell">
+    <wv-switch
       :is-in-cell="false"
       slot="ft"
       v-model="currentValue"
       :disabled="disabled"
     />
-  </Cell>
+  </cell>
 
   <div
     class="wv-switch"

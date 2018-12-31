@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Transition
+    <transition
       enter-active-class="weui-animate-fade-in"
       leave-active-class="weui-animate-fade-out"
     >
@@ -9,8 +9,8 @@
         v-show="currentValue && type === 'ios'"
         @click="currentValue = false"
       />
-    </Transition>
-    <Transition
+    </transition>
+    <transition
       enter-active-class="weui-animate-slide-up"
       leave-active-class="weui-animate-slide-down"
     >
@@ -35,9 +35,9 @@
           <div class="weui-actionsheet__cell" @click="currentValue = false" v-html="cancelText" />
         </div>
       </div>
-    </Transition>
+    </transition>
 
-    <Transition
+    <transition
       enter-active-class="weui-animate-fade-in"
       leave-active-class="weui-animate-fade-out"
     >
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-    </Transition>
+    </transition>
   </div>
 </template>
 

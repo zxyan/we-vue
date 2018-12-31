@@ -1,5 +1,5 @@
 <template>
-  <Transition
+  <transition
     enter-active-class="weui-animate-fade-in"
     leave-active-class="weui-animate-fade-out"
   >
@@ -8,12 +8,11 @@
       v-show="visible"
       v-html="message"
     />
-  </Transition>
+  </transition>
 </template>
 
 <script lang="ts">
 import '../../scss/top-tips.scss'
-
 import Vue from 'vue'
 import PopupMixin from '../../mixins/popup'
 

@@ -1,5 +1,3 @@
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: false,
   parserOptions: {
@@ -27,16 +25,20 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "vue/require-default-prop": 'off',
-    "vue/no-unused-vars": 'off',
-    "vue/name-property-casing": ['error', 'kebab-case'],
+    'vue/require-default-prop': 'off',
+    'vue/no-unused-vars': 'off',
+    'vue/name-property-casing': ['error', 'kebab-case'],
     'vue/max-attributes-per-line': ['error', {
-      "singleline": 5,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": false
+      'singleline': 5,
+      'multiline': {
+        'max': 1,
+        'allowFirstLine': false
       }
     }],
+    'vue/component-name-in-template-casing': [
+      'error', 'kebab-case', {
+        'ignores': [],
+      }],
     'comma-dangle': ['warn', 'always-multiline'],
   },
   overrides: [

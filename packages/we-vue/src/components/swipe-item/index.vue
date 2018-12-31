@@ -21,7 +21,7 @@ export default Vue.extend({
 
   data () {
     return {
-      offset: 0
+      offset: 0,
     }
   },
 
@@ -29,9 +29,9 @@ export default Vue.extend({
     style (): object {
       return {
         width: (this.$parent as Swipe).width + 'px',
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate3d(${this.offset}px, 0, 0)`,
       }
-    }
+    },
   },
 
   beforeCreate (): void {
@@ -41,6 +41,6 @@ export default Vue.extend({
   destroyed (): void {
     this.$parent &&
       (this.$parent as Swipe).swipes.splice((this.$parent as Swipe).swipes.indexOf(this), 1)
-  }
+  },
 })
 </script>

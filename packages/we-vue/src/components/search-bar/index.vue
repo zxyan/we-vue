@@ -3,7 +3,7 @@
     <div class="weui-search-bar">
       <div class="weui-search-bar__form">
         <div class="weui-search-bar__box">
-          <i class="weui-icon-search"/>
+          <i class="weui-icon-search" />
           <form action="javascript:" @submit="$emit('search', currentValue)">
             <input
               class="weui-search-bar__input"
@@ -14,15 +14,15 @@
               ref="input"
             >
           </form>
-          <div class="weui-icon-clear" @click="clear"/>
+          <div class="weui-icon-clear" @click="clear" />
         </div>
         <label
           class="weui-search-bar__label"
           @click="textClick"
           v-show="!isActive"
         >
-          <i class="weui-icon-search"/>
-          <span v-text="placeholder"/>
+          <i class="weui-icon-search" />
+          <span v-text="placeholder" />
         </label>
       </div>
       <div
@@ -69,7 +69,7 @@ export default Vue.extend({
   name: 'wv-search-bar',
 
   components: {
-    WvCell
+    WvCell,
   },
 
   props: {
@@ -77,20 +77,20 @@ export default Vue.extend({
     show: Boolean,
     placeholder: {
       type: String,
-      default: '搜索'
+      default: '搜索',
     },
     cancelText: {
       type: String,
-      default: '取消'
+      default: '取消',
     },
     resultTextKey: String,
     result: Array,
-    value: String
+    value: String,
   },
 
   data: vm => ({
     currentValue: vm.value,
-    isActive: false
+    isActive: false,
   }),
 
   mounted (): void {
@@ -116,7 +116,7 @@ export default Vue.extend({
       this.$emit('cancel')
       this.clear()
       this.isActive = false
-    }
+    },
   },
 
   watch: {
@@ -126,7 +126,7 @@ export default Vue.extend({
 
     value (val): void {
       this.currentValue = val
-    }
-  }
+    },
+  },
 })
 </script>

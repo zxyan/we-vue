@@ -12,7 +12,7 @@
       @touchcancel="onTouchend"
       :style="style"
     >
-      <WvCell
+      <wv-cell
         :title="title"
         :value="value"
         :is-link="isLink"
@@ -29,7 +29,7 @@
         <template slot="ft" v-if="typeof value === 'undefined'">
           <slot name="ft" />
         </template>
-      </WvCell>
+      </wv-cell>
     </div>
     <div class="weui-cell__ft" ref="rightBtns">
       <slot name="right" />
@@ -42,7 +42,7 @@ import '../../scss/cell-swipe.scss'
 
 import Routeable from '../../mixins/routable'
 import { getTouch } from '../../utils'
-import Cell from '../cell/index'
+import WvCell from '../cell/index'
 import Clickoutside from '../../utils/clickoutside'
 
 import Vue from 'vue'
@@ -51,7 +51,7 @@ export default Vue.extend({
   name: 'wv-cell-swipe',
 
   components: {
-    [Cell.name]: Cell,
+    WvCell,
   },
 
   directives: {

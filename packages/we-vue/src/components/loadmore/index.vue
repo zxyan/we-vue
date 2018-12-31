@@ -3,7 +3,7 @@
     class="weui-loadmore"
     :class="{'weui-loadmore_line': (type === 'line' || type === 'lineDot'), 'weui-loadmore_dot': type === 'lineDot' }"
   >
-    <WvSpinner type="default" v-if="type === 'default'" />
+    <wv-spinner type="default" v-if="type === 'default'" />
     <span class="weui-loadmore__tips" v-text="type === 'lineDot' ? '' : text" />
   </div>
 </template>
