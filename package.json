@@ -5,7 +5,8 @@
   ],
   "scripts": {
     "dev": "lerna run serve --ignore docs --stream --parallel",
-    "dev:docs": "lerna run dev --scope wevue.org --stream"
+    "dev:docs": "lerna run dev --scope wevue.org --stream",
+    "lint": "lerna exec lint --scope we-vue --stream"
   },
   "husky": {
     "hooks": {
@@ -14,7 +15,7 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "npm run lint:fix",
+      "yarn run lint",
       "git add"
     ]
   },

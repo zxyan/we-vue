@@ -12,24 +12,21 @@
 </template>
 
 <script>
-// import { TopTips } from 'we-vue'
-import { WvToptips, a } from 'we-vue'
-
-console.log(WvToptips)
-console.log(a)
+import TopTips from 'we-vue/src/components/top-tips/index.ts'
+console.log(TopTips)
 
 export default {
   // TODO
   methods: {
     openTips () {
-      WvToptips({
-        message: '提示信息',
-        duration: 3000
-      })
+      // WvToptips({
+      //   message: '提示信息',
+      //   duration: 3000
+      // })
     },
 
     closeTips () {
-      WvToptips.close()
+      // WvToptips.close()
     }
   }
 }

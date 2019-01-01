@@ -9,6 +9,8 @@ const weVuePackage = require('../package')
 
 const isProd = process.env.NODE_ENV === 'production'
 
+const resolve = file => require('path').resolve(__dirname, file)
+
 module.exports = {
   mode: isProd ? 'production' : 'development',
   resolve: {
@@ -54,7 +56,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.tsx?$/,
+        test: /\.ts?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
@@ -85,9 +87,10 @@ module.exports = {
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
     new ForkTsChecker({
+      checkSyntacticErrors: isProd,
       vue: true,
       tslint: false, // TODO
-      checkSyntacticErrors: isProd
+      tsconfig: resolve('../tsconfig.json')
     }),
     new DefinePlugin({
       fuck: "'fuck hello'",

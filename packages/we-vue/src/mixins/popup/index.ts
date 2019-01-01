@@ -22,8 +22,8 @@ export default Vue.extend({
     getContainer: Function,
     lockOnScroll: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   watch: {
@@ -37,14 +37,14 @@ export default Vue.extend({
 
     mask () {
       this.renderMask()
-    }
+    },
   },
 
   created () {
     this._popupId = 'popup-' + context.plusKey('idSeed')
     this.pos = {
       x: 0,
-      y: 0
+      y: 0,
     }
   },
 
@@ -70,7 +70,7 @@ export default Vue.extend({
     onTouchstart (e) {
       this.pos = {
         x: e.touches[0].clientX,
-        y: e.touches[0].clientY
+        y: e.touches[0].clientY,
       }
     },
 
@@ -139,16 +139,16 @@ export default Vue.extend({
         manager.open(this, {
           zIndex: context.plusKey('zIndex'),
           className: this.maskClass,
-          customStyle: this.maskStyle
+          customStyle: this.maskStyle,
         })
       } else {
         manager.close(this._popupId)
       }
       this.$el.style.zIndex = context.plusKey('zIndex')
-    }
+    },
   },
 
   beforeDestroy () {
     this.close()
-  }
+  },
 })
