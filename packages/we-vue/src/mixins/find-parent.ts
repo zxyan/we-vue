@@ -1,7 +1,7 @@
 export default {
   data (): object {
     return {
-      parent: null
+      parent: null,
     }
   },
 
@@ -15,6 +15,6 @@ export default {
         }
         parent = parent.$parent
       }
-    }
-  }
+    },
+  },
 }

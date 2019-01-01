@@ -9,7 +9,7 @@ const PopupContext: any = {
 
   get top (): any {
     return this.stack[this.stack.length - 1]
-  }
+  },
 }
 
 export default PopupContext

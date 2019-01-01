@@ -4,7 +4,7 @@ import context from './context'
 
 const defaultConfig = {
   className: '',
-  customStyle: {}
+  customStyle: {},
 }
 
 export default {
@@ -40,7 +40,7 @@ export default {
 
     if (!modal) {
       modal = new (Vue.extend(Modal))({
-        el: document.createElement('div')
+        el: document.createElement('div'),
       })
       modal.$on('click', this.onClick)
       context.modal = modal
@@ -57,7 +57,7 @@ export default {
       Object.assign(modal, {
         ...defaultConfig,
         ...config,
-        visible: true
+        visible: true,
       })
     }
   },
@@ -69,5 +69,5 @@ export default {
       vm.$emit('click-mask')
       vm.closeOnClickMask && vm.close()
     }
-  }
+  },
 }

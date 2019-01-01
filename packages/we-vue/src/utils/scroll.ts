@@ -91,5 +91,5 @@ export default {
 
   getComputedStyle:
     !isServer &&
-    document.defaultView.getComputedStyle.bind(document.defaultView)
+    document.defaultView.getComputedStyle.bind(document.defaultView),
 }

@@ -21,7 +21,7 @@ export default {
     el[context] = {
       handler,
       callback: binding.value,
-      arg: binding.arg || 'click'
+      arg: binding.arg || 'click',
     }
 
     !isServer && document.addEventListener(el[context].arg, handler)
@@ -40,7 +40,7 @@ export default {
   install (Vue): void {
     Vue.directive('clickoutside', {
       bind: this.bind,
-      unbind: this.unbind
+      unbind: this.unbind,
     })
-  }
+  },
 }

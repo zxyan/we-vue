@@ -22,6 +22,6 @@ export default {
           : this.offsetX < this.offsetY
             ? 'vertical'
             : ''
-    }
-  }
+    },
+  },
 }
