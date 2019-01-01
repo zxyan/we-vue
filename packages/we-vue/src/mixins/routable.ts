@@ -7,7 +7,7 @@ export default Vue.extend({
   props: {
     href: [String, Object],
     to: [String, Object],
-    replace: Boolean
+    replace: Boolean,
   },
 
   methods: {
@@ -21,6 +21,6 @@ export default Vue.extend({
       } else if (href) {
         replace ? location.replace(href) : location.href = href
       }
-    }
-  }
+    },
+  },
 })

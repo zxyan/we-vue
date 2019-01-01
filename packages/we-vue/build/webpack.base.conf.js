@@ -56,14 +56,21 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.ts?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          transpileOnly: true,
-          appendTsSuffixTo: [/\.vue$/],
-          happyPackMode: isProd
-        }
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              appendTsSuffixTo: [/\.vue$/],
+              happyPackMode: isProd
+            }
+          }
+        ],
+        exclude: /node_modules/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
