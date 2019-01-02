@@ -24,13 +24,11 @@
 import '../../scss/cell.scss'
 
 import Routeable from '../../mixins/routable'
-import Themeable from '../../mixins/themeable'
 
 import mixins from '../../utils/mixins'
 
 export default mixins(
-  Routeable,
-  Themeable
+  Routeable
   /* @vue/component */
 ).extend({
   name: 'wv-cell',

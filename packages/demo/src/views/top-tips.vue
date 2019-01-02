@@ -12,8 +12,7 @@
 </template>
 
 <script>
-import TopTips from 'we-vue/src/components/top-tips/index.ts'
-console.log(TopTips)
+// import TopTips from 'we-vue/src/components/top-tips/index.ts'
 
 export default {
   // TODO

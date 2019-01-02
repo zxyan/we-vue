@@ -4,7 +4,7 @@
 
 import { isServer } from './index'
 
-let prev: number = Date.now()
+let prev = Date.now()
 
 /* istanbul ignore next */
 function fallback (fn) {
@@ -17,8 +17,7 @@ function fallback (fn) {
 
 /* istanbul ignore next */
 // const root: Global | Window = isServer ? global : window
-// TODO
-const root: Window = window
+const root = window
 
 /* istanbul ignore next */
 const iRaf =
