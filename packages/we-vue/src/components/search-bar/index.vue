@@ -50,20 +50,9 @@
 </template>
 
 <script lang="ts">
-import '../../scss/search-bar.scss'
-
-import WvCell from '../cell/index'
-
 import Vue from 'vue'
-
-// TODO
-declare module 'vue/types/vue' {
-  interface Vue {
-    isActive: boolean,
-    currentValue: any,
-    clear: Function
-  }
-}
+import '../../scss/search-bar.scss'
+import WvCell from '../cell/index'
 
 export default Vue.extend({
   name: 'wv-search-bar',
