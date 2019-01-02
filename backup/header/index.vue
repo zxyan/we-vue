@@ -16,16 +16,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '../../scss/header.scss'
 
-import Themeable from '../../mixins/themeable'
-
-import mixins from '../../utils/mixins'
-
-export default mixins(
-  Themeable
-  /* @vue/component */
-).extend({
+export default Vue.extend({
   name: 'wv-header',
 
   props: {

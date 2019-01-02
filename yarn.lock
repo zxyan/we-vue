@@ -2809,6 +2809,16 @@ cache-loader@^1.2.5:
     neo-async "^2.5.0"
     schema-utils "^0.4.2"
 
+cache-loader@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/cache-loader/download/cache-loader-2.0.0.tgz#75cad9eb1e1c882c2b8c31ea008b41ebb0787de0"
+  integrity sha1-dcrZ6x4ciCwrjDHqAItB67B4feA=
+  dependencies:
+    loader-utils "^1.1.0"
+    mkdirp "^0.5.1"
+    neo-async "^2.5.0"
+    schema-utils "^1.0.0"
+
 cachedir@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cachedir/-/cachedir-2.1.0.tgz#b448c32b44cd9c0cd6ce4c419fa5b3c112c02191"

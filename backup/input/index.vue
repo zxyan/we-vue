@@ -35,18 +35,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '../../scss/input.scss'
-
-import Themeable from '../../mixins/themeable'
 
 import WvIcon from '../icon/index'
 
-import mixins from '../../utils/mixins'
-
-export default mixins(
-  Themeable
-  /* @vue/component */
-).extend({
+export default Vue.extend({
   name: 'wv-input',
 
   components: {

@@ -27,20 +27,16 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '../../scss/switch.scss'
 
 import { getTouch } from '../../utils'
 import Cell from '../cell/index'
-import Themeable from '../../mixins/themeable'
-
-import mixins from '../../utils/mixins'
 
 // 开关的行程
 const THUMB_STROKE = 20
 
-export default mixins(
-  Themeable
-).extend({
+export default Vue.extend({
   name: 'wv-switch',
 
   components: {

@@ -4,14 +4,12 @@
 
 <script lang="ts">
 import Routeable from '../../mixins/routable'
-import Themeable from '../../mixins/themeable'
 
 import mixins from '../../utils/mixins'
 
 /* @vue/component */
 export default mixins(
-  Routeable,
-  Themeable
+  Routeable
 ).extend({
   name: 'wv-footer-link',
 

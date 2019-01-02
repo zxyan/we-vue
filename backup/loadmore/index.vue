@@ -9,18 +9,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '../../scss/loadmore.scss'
-
-import Themeable from '../../mixins/themeable'
-
-import mixins from '../../utils/mixins'
 
 import Spinner from '../spinner'
 
-export default mixins(
-  Themeable
-  /* @vue/component */
-).extend({
+export default Vue.extend({
   name: 'wv-loadmore',
 
   components: {

@@ -52,12 +52,33 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        use: [
+          'cache-loader',
+          {
+            loader: 'thread-loader',
+            options: {
+              // there should be 1 cpu for the fork-ts-checker-webpack-plugin
+              workers: require('os').cpus().length - 1
+            }
+          },
+          'babel-loader'
+        ],
         exclude: /node_modules/
       },
       {
         test: /\.ts$/,
         use: [
+          {
+            loader: 'cache-loader'
+          },
+          // todo
+          // {
+          //   loader: 'thread-loader',
+          //   options: {
+          //     // there should be 1 cpu for the fork-ts-checker-webpack-plugin
+          //     workers: require('os').cpus().length - 1
+          //   }
+          // },
           {
             loader: 'babel-loader'
           },
@@ -65,7 +86,8 @@ module.exports = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              appendTsSuffixTo: [/\.vue$/]
+              appendTsSuffixTo: [/\.vue$/],
+              happyPackMode: isProd
             }
           }
         ],
