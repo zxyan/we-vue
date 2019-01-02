@@ -65,8 +65,7 @@ module.exports = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              appendTsSuffixTo: [/\.vue$/],
-              happyPackMode: isProd
+              appendTsSuffixTo: [/\.vue$/]
             }
           }
         ],
