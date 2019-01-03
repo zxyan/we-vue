@@ -53,6 +53,17 @@
 import Vue from 'vue'
 import '../../scss/search-bar.scss'
 import WvCell from '../cell/index'
+// import mixins from '../../utils/mixins'
+
+import { PropValidator } from 'vue/types/options'
+
+// declare module 'vue/types/vue' {
+//   interface Vue {
+//     isActive: boolean
+//     currentValue: any
+//     clear: () => void
+//   }
+// }
 
 export default Vue.extend({
   name: 'wv-search-bar',
@@ -74,13 +85,15 @@ export default Vue.extend({
     },
     resultTextKey: String,
     result: Array,
-    value: String,
+    value: null as string as PropValidator<string>,
   },
 
-  data: vm => ({
-    currentValue: vm.value,
-    isActive: false,
-  }),
+  data () {
+    return {
+      currentValue: this.value,
+      isActive: false,
+    }
+  },
 
   mounted (): void {
     if (this.autofocus) {
