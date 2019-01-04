@@ -60,12 +60,12 @@
     "typescript-eslint-parser": "^21.0.0",
     "vue": "^2.5.9",
     "vue-jest": "^3.0.0",
-    "vue-loader": "^15.2.0",
+    "vue-loader": "^15.5.0",
     "vue-style-loader": "^4.0.2",
     "vue-template-compiler": "^2.5.9",
     "webpack": "^4.28.0",
     "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.2.1"
   },
   "config": {
     "commitizen": {

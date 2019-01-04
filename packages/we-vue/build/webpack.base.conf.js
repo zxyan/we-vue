@@ -47,13 +47,28 @@ module.exports = {
       // },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: resolve(`../node_modules/.cache/vue-loader`)
+            }
+          },
+          {
+            loader: 'vue-loader',
+            options: vueLoaderConfig
+          }
+        ]
       },
       {
         test: /\.js$/,
         use: [
-          'cache-loader',
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: resolve(`../node_modules/.cache/babel-loader`)
+            }
+          },
           {
             loader: 'thread-loader',
             options: {
@@ -69,16 +84,14 @@ module.exports = {
         test: /\.ts$/,
         use: [
           {
-            loader: 'cache-loader'
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: resolve(`../node_modules/.cache/ts-loader`)
+            }
           },
-          // todo
-          // {
-          //   loader: 'thread-loader',
-          //   options: {
-          //     // there should be 1 cpu for the fork-ts-checker-webpack-plugin
-          //     workers: require('os').cpus().length - 1
-          //   }
-          // },
+          {
+            loader: 'thread-loader'
+          },
           {
             loader: 'babel-loader'
           },
@@ -86,8 +99,8 @@ module.exports = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              appendTsSuffixTo: [/\.vue$/],
-              happyPackMode: isProd
+              happyPackMode: true,
+              appendTsSuffixTo: [/\.vue$/]
             }
           }
         ],
@@ -118,10 +131,10 @@ module.exports = {
       checkSyntacticErrors: isProd,
       vue: true,
       tslint: false, // TODO
+      formatter: 'codeframe',
       tsconfig: resolve('../tsconfig.json')
     }),
     new DefinePlugin({
-      fuck: "'fuck hello'",
       __WE_VUE_VERSION__: JSON.stringify(weVuePackage.version),
       __REQUIRED_VUE__: JSON.stringify(weVuePackage.peerDependencies.vue),
     })

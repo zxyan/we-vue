@@ -6,4 +6,3 @@ node_modules/
 /lib/
 /lib-temp/
 /dist/
-.cache-loader
