@@ -53,19 +53,14 @@
 import Vue from 'vue'
 import '../../scss/search-bar.scss'
 import WvCell from '../cell/index'
-// import mixins from '../../utils/mixins'
+import mixins from '../../utils/mixins'
+
+import Colorable from '../../mixins/colorable'
 
 import { PropValidator } from 'vue/types/options'
 
-// declare module 'vue/types/vue' {
-//   interface Vue {
-//     isActive: boolean
-//     currentValue: any
-//     clear: () => void
-//   }
-// }
-
-export default Vue.extend({
+// export default Vue.extend({
+export default mixins([]).extend({
   name: 'wv-search-bar',
 
   components: {
