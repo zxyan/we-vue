@@ -1,6 +1,6 @@
 import { isServer } from './'
 
-export let supportsPassive = false
+export let supportsPassive: boolean = false
 
 if (!isServer) {
   try {
@@ -11,11 +11,11 @@ if (!isServer) {
         supportsPassive = true
       },
     })
-    window.addEventListener('test-passive', null, opts)
+    window.addEventListener('test-passive', {} as EventListenerObject, opts)
   } catch (e) {}
 }
 
-export function on (target, event, handler, passive = false) {
+export function on (target: Element, event: string, handler: EventListener, passive = false) {
   !isServer &&
     target.addEventListener(
       event,
@@ -24,6 +24,6 @@ export function on (target, event, handler, passive = false) {
     )
 }
 
-export function off (target, event, handler) {
+export function off (target: Element, event: string, handler: EventListener) {
   !isServer && target.removeEventListener(event, handler)
 }
