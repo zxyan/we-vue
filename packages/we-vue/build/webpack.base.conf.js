@@ -1,6 +1,5 @@
 'use strict'
 const utils = require('./utils')
-const vueLoaderConfig = require('./vue-loader.conf')
 const { VueLoaderPlugin } = require('vue-loader')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
@@ -56,7 +55,12 @@ module.exports = {
           },
           {
             loader: 'vue-loader',
-            options: vueLoaderConfig
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              },
+              cacheDirectory: resolve(`../node_modules/.cache/vue-loader`)
+            }
           }
         ]
       },
