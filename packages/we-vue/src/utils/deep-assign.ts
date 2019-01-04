@@ -2,7 +2,7 @@ import { isDef, isObj } from './'
 
 const { hasOwnProperty } = Object.prototype
 
-function assignKey (to, from, key): void {
+function assignKey (to: object, from: object, key: string | number): void {
   const val = from[key]
 
   if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {
@@ -16,7 +16,7 @@ function assignKey (to, from, key): void {
   }
 }
 
-export default function assign (to, from) {
+export default function assign (to: object, from: object): object {
   for (const key in from) {
     if (hasOwnProperty.call(from, key)) {
       assignKey(to, from, key)
