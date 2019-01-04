@@ -1,13 +1,13 @@
-const PopupContext: any = {
+const PopupContext = {
   idSeed: 1,
   zIndex: 2000,
   stack: [],
 
-  plusKey (key): number {
+  plusKey (key) {
     return this[key]++
   },
 
-  get top (): any {
+  get top () {
     return this.stack[this.stack.length - 1]
   },
 }

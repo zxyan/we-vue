@@ -50,7 +50,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import '../../scss/search-bar.scss'
 import WvCell from '../cell/index'
 import mixins from '../../utils/mixins'
@@ -60,7 +59,7 @@ import Colorable from '../../mixins/colorable'
 import { PropValidator } from 'vue/types/options'
 
 // export default Vue.extend({
-export default mixins([]).extend({
+export default mixins(Colorable).extend({
   name: 'wv-search-bar',
 
   components: {
@@ -80,7 +79,7 @@ export default mixins([]).extend({
     },
     resultTextKey: String,
     result: Array,
-    value: null as string as PropValidator<string>,
+    value: null,
   },
 
   data () {
