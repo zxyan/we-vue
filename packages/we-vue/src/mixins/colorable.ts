@@ -27,6 +27,8 @@ export default Vue.extend({
         }
       }
 
+      console.log('fuck')
+
       return data
     },
 

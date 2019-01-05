@@ -5,10 +5,35 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 const weVuePackage = require('../package')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
+const extractCSS = isProd || process.env.TARGET === 'development'
 
 const resolve = file => require('path').resolve(__dirname, file)
+
+const cssLoaders = [
+  extractCSS ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+  {
+    loader: 'css-loader',
+    options: {
+      sourceMap: !isProd
+    }
+  },
+  {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: !isProd
+    }
+  },
+  {
+    loader: 'sass-loader',
+    options: {
+      sourceMap: !isProd
+    }
+  }
+]
 
 module.exports = {
   mode: isProd ? 'production' : 'development',
@@ -44,6 +69,10 @@ module.exports = {
       //     emitWarning: true
       //   }
       // },
+      {
+        test: /\.scss$/,
+        use: cssLoaders
+      },
       {
         test: /\.vue$/,
         use: [
@@ -130,6 +159,9 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: true
+    }),
     new VueLoaderPlugin(),
     new ForkTsChecker({
       checkSyntacticErrors: isProd,

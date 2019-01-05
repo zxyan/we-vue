@@ -56,8 +56,6 @@ import mixins from '../../utils/mixins'
 
 import Colorable from '../../mixins/colorable'
 
-import { PropValidator } from 'vue/types/options'
-
 // export default Vue.extend({
 export default mixins(Colorable).extend({
   name: 'wv-search-bar',
