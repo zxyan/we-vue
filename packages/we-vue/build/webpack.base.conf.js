@@ -1,5 +1,5 @@
 'use strict'
-const utils = require('./utils')
+const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
@@ -144,7 +144,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
         }
       },
       {
@@ -152,7 +152,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
         }
       }
     ]

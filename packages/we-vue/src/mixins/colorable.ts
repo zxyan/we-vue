@@ -26,9 +26,6 @@ export default Vue.extend({
           [color]: true,
         }
       }
-
-      console.log('fuck')
-
       return data
     },
 
