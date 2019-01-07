@@ -1,5 +1,5 @@
 <template>
-  <i :class="classObject" />
+  <i :class="classes" />
 </template>
 
 <script lang="ts">
@@ -18,7 +18,7 @@ export default Vue.extend({
   },
 
   computed: {
-    classObject () {
+    classes () {
       let classType = `weui-icon-${this.type}`
 
       return {

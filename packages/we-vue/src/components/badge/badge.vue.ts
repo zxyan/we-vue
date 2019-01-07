@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import '../../scss/badge.scss'
 
 import mixins from '../../utils/mixins'
@@ -11,10 +10,5 @@ export default mixins(Colorable).extend({
   props: {
     color: String,
     isDot: Boolean,
-  },
-
-  mounted () {
-    this.setTextColor('#0f0')
-    console.log(this.color)
   },
 })

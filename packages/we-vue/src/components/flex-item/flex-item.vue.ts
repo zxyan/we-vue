@@ -1,15 +1,11 @@
-<template>
-  <div class="weui-flex__item" :style="style">
-    <slot />
-  </div>
-</template>
+// import Vue from 'vue'
+import '../../scss/flex-item.scss'
 
-<script lang="ts">
-import Vue from 'vue'
-// TODO
-// import '../../scss/flex-item.scss'
+import mixins from '../../utils/mixins'
 
-export default Vue.extend({
+import Colorable from '../../mixins/colorable'
+
+export default mixins(Colorable).extend({
   name: 'wv-flex-item',
 
   props: {
@@ -24,11 +20,12 @@ export default Vue.extend({
   },
 
   computed: {
-    gutter () {
+    gutter (): number {
+      // TODO
       return (this.$parent && Number(this.$parent.gutter)) || 0
     },
 
-    style () {
+    style (): object {
       const padding = `${Number(this.gutter) / 2}px`
 
       let ret = this.gutter
@@ -42,4 +39,3 @@ export default Vue.extend({
     },
   },
 })
-</script>

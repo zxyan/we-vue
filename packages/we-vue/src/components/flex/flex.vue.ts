@@ -1,10 +1,3 @@
-<template>
-  <div class="weui-flex" :style="style">
-    <slot />
-  </div>
-</template>
-
-<script lang="ts">
 import Vue from 'vue'
 import '../../scss/flex.scss'
 
@@ -15,18 +8,17 @@ export default Vue.extend({
     gutter: {
       type: [Number, String],
       default: 0,
-      validator: val => {
+      validator: (val: number | string) => {
         return Number(val) >= 0
       },
     },
   },
 
   computed: {
-    style () {
+    style (): object {
       const margin = `-${Number(this.gutter) / 2}px`
 
       return this.gutter ? { marginLeft: margin, marginRight: margin } : {}
     },
   },
 })
-</script>

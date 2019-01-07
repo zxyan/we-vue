@@ -8,7 +8,7 @@
   </span>
 </template>
 
-<script lang="ts">
-import a from './badge'
-export default a
+<script>
+import badge from './badge.vue.ts'
+export default badge
 </script>

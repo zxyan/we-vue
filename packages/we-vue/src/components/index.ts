@@ -3,12 +3,12 @@
 // TODO:
 // export * from './area'
 export * from './badge'
-// export * from './button'
+export * from './button'
 export * from './cell'
 // export * from './cell-swipe'
 // export * from './cell-swipe-button'
 // export * from './checklist'
-// export * from './circle'
+export * from './circle'
 // // TODO:
 // // export * from './datetime-picker'
 // // TODO:
@@ -34,7 +34,7 @@ export * from './group'
 // export * from './popup'
 // export * from './progress'
 // export * from './radio'
-// export * from './search-bar'
+export * from './search-bar'
 // export * from './slider'
 // export * from './spinner'
 // export * from './swipe'

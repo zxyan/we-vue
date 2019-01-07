@@ -1,18 +1,6 @@
-<template>
-  <button
-    class="weui-btn"
-    :class="classObject"
-    @click="handleClick"
-    :disabled="disabled"
-  >
-    <i class="weui-loading" v-if="isLoading" />
-    <slot />
-  </button>
-</template>
-
-<script lang="ts">
 import Vue from 'vue'
 import '../../scss/button.scss'
+import { classesObject } from '../../globals'
 
 export default Vue.extend({
   name: 'wv-button',
@@ -29,14 +17,14 @@ export default Vue.extend({
   },
 
   methods: {
-    handleClick (event) {
+    onClick (event: MouseEvent): void {
       this.$emit('click', event)
     },
   },
 
   computed: {
-    classObject () {
-      let ret = {}
+    classes (): classesObject {
+      let ret: classesObject = {}
 
       let classType = this.plain
         ? `weui-btn_plain-${this.type}`
@@ -54,4 +42,3 @@ export default Vue.extend({
     },
   },
 })
-</script>

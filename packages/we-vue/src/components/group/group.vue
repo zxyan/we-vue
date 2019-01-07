@@ -12,16 +12,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import '../../scss/group.scss'
-
-export default Vue.extend({
-  name: 'wv-group',
-
-  props: {
-    title: String,
-    titleColor: String,
-  },
-})
+<script>
+import group from './group.vue.ts'
+export default group
 </script>

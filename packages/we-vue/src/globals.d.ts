@@ -113,3 +113,7 @@ declare module 'vue/types/vue' {
     extend<V extends Vue = Vue> (options?: ComponentOptions<V> & Options): OptionsVue<V, {}, {}, {}, {}, Options>
   }
 }
+
+declare type classesObject = {
+  [key: string]: boolean
+}
