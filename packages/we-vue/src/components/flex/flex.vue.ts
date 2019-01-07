@@ -1,8 +1,21 @@
-import Vue from 'vue'
 import '../../scss/flex.scss'
 
-export default Vue.extend({
+import mixins from '../../utils/mixins'
+
+import { PropValidator } from 'vue/types/options'
+
+// Mixins
+import Colorable from '../../mixins/colorable'
+
+export default mixins(
+  Colorable
+  /* @vue/component */
+).extend({
   name: 'wv-flex',
+
+  provide (): object {
+    return { flexComponent: this }
+  },
 
   props: {
     gutter: {
@@ -11,7 +24,7 @@ export default Vue.extend({
       validator: (val: number | string) => {
         return Number(val) >= 0
       },
-    },
+    } as PropValidator<number | string>,
   },
 
   computed: {

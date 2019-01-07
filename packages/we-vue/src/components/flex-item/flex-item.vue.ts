@@ -1,12 +1,34 @@
-// import Vue from 'vue'
-import '../../scss/flex-item.scss'
+import Vue from 'vue'
+// TODO
+// import '../../scss/flex-item.scss'
 
+import WVFlex from '../flex'
+// TODO
+// import WVFlexItem from './index'
+
+// Utils
 import mixins from '../../utils/mixins'
 
+// Mixins
 import Colorable from '../../mixins/colorable'
 
-export default mixins(Colorable).extend({
+type WVFlexInstance = InstanceType<typeof WVFlex>
+
+interface options extends Vue {
+  flexComponent: WVFlexInstance
+}
+
+export default mixins<options>(
+  Colorable
+  /* @vue/component */
+).extend({
   name: 'wv-flex-item',
+
+  inject: {
+    flexComponent: {
+      default: null,
+    },
+  },
 
   props: {
     flex: {
@@ -21,8 +43,7 @@ export default mixins(Colorable).extend({
 
   computed: {
     gutter (): number {
-      // TODO
-      return (this.$parent && Number(this.$parent.gutter)) || 0
+      return (Number(this.flexComponent.gutter)) || 0
     },
 
     style (): object {
