@@ -1,8 +1,8 @@
 <template>
   <div
+    v-if="type === 'appmsg'"
     class="weui-media-box"
     :class="'weui-media-box_' + type"
-    v-if="type === 'appmsg'"
     @click="onClick"
   >
     <div class="weui-media-box__hd" v-if="type !== 'text'">
@@ -15,9 +15,9 @@
   </div>
 
   <div
+    v-else
     class="weui-media-box"
     :class="'weui-media-box_' + type"
-    v-else
     @click="onClick"
   >
     <h4 class="weui-media-box__title" v-text="title" />
@@ -26,34 +26,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import '../../scss/media-box.scss'
-
-import Routeable from '../../mixins/routable'
-
-import mixins from '../../utils/mixins'
-
-export default mixins(
-  Routeable
-  /* @vue/component */
-).extend({
-  name: 'wv-media-box',
-
-  props: {
-    type: {
-      type: String,
-      default: 'appmsg',
-    },
-    thumb: String,
-    title: String,
-    description: String,
-  },
-
-  methods: {
-    onClick () {
-      this.$emit('click')
-      this.routeLink()
-    },
-  },
-})
+<script>
+import mediaBox from './media-box.vue.ts'
+export default mediaBox
 </script>
