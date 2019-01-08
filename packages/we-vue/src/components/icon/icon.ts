@@ -1,10 +1,9 @@
-<template>
-  <i :class="classes" />
-</template>
-
-<script lang="ts">
 import Vue from 'vue'
 import '../../scss/icon.scss'
+
+// Types
+import { classesObject } from '../../globals'
+import { VNode } from 'vue/types/vnode'
 
 export default Vue.extend({
   name: 'wv-icon',
@@ -18,7 +17,7 @@ export default Vue.extend({
   },
 
   computed: {
-    classes () {
+    classes (): classesObject {
       let classType = `weui-icon-${this.type}`
 
       return {
@@ -27,5 +26,10 @@ export default Vue.extend({
       }
     },
   },
+
+  render (h): VNode {
+    return h('h1', {
+      class: this.classes,
+    })
+  },
 })
-</script>
