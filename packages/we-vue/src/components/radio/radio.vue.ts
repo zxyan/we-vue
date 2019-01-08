@@ -1,9 +1,17 @@
 import Vue from 'vue'
 import '../../scss/radio.scss'
 
+// Utils
+import mixins from '../../utils/mixins'
+
+// Mixins
+import Colorable from '../../mixins/colorable'
+
 import { PropValidator } from 'vue/types/options'
 
-export default Vue.extend({
+export default mixins(
+  Colorable
+).extend({
   name: 'wv-radio',
 
   props: {
@@ -27,6 +35,7 @@ export default Vue.extend({
 
   watch: {
     currentValue (val): void {
+      // TODO
       this.$emit('input', val)
       this.$emit('change', val)
     },
