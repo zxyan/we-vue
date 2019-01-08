@@ -1,51 +1,31 @@
-<template>
-  <div class="weui-slider-box">
-    <div
-      class="weui-slider"
-      :class="{ 'wv-slider--disabled': disabled }"
-    >
-      <div
-        class="weui-slider__inner"
-        ref="inner"
-        @click.prevent="onClick"
-      >
-        <div
-          :style="{ width: percent + '%' }"
-          class="weui-slider__track"
-        />
-        <div
-          :style="{left: percent + '%'}"
-          class="weui-slider__handler"
-          ref="handler"
-          @touchstart="onTouchstart"
-          @touchmove="onTouchmove"
-        />
-      </div>
-    </div>
-    <div class="weui-slider-box__value" v-if="showValue">
-      <slot name="value-box">
-        {{ value }}
-      </slot>
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
+import Vue from 'vue'
 import '../../scss/slider.scss'
 
+// Utils
 import { getTouch } from '../../utils'
+import mixins from '../../utils/mixins'
 
-import Vue from 'vue'
+// Mixins
+import Colorable from '../../mixins/colorable'
 
-export default Vue.extend({
+interface options extends Vue {
+  $refs: {
+    inner: HTMLElement
+    handler: HTMLElement
+  }
+}
+
+export default mixins<options>(
+  Colorable
+).extend({
   name: 'wv-slider',
 
   props: {
     min: {
       type: Number,
       default: 0,
-      validator: value => {
-        return value >= 0
+      validator: (val: number) => {
+        return val >= 0
       },
     },
     max: {
@@ -55,8 +35,8 @@ export default Vue.extend({
     step: {
       type: Number,
       default: 1,
-      validator: value => {
-        return value > 0
+      validator: (val: number) => {
+        return val > 0
       },
     },
     value: {
@@ -75,49 +55,49 @@ export default Vue.extend({
 
   data () {
     return {
-      handlerStartPos: 0,
-      sliderLeft: 0,
-      sliderLength: 0,
+      handlerStartPos: 0 as number,
+      sliderLeft: 0 as number,
+      sliderLength: 0 as number,
     }
   },
 
   computed: {
-    percent () {
+    percent (): number {
       if (typeof this.value === 'undefined' || this.value === null) return 0
 
       return Math.floor(((this.value - this.min) / (this.max - this.min)) * 100)
     },
 
-    stepWidth () {
+    stepWidth (): number {
       return (this.sliderLength * this.step) / (this.max - this.min)
     },
   },
 
-  created () {
+  created (): void {
     if (this.min >= this.max) {
       throw new Error('property:max must be bigger than property:min')
     }
   },
 
-  mounted () {
+  mounted (): void {
     this.sliderLeft = this.$refs.inner.offsetLeft
     this.sliderLength = this.$refs.inner.getBoundingClientRect().width
   },
 
   methods: {
-    getHandlerStartPos () {
+    getHandlerStartPos (): number {
       const innerRect = this.$refs.inner.getBoundingClientRect()
       const handlerRect = this.$refs.handler.getBoundingClientRect()
 
       return handlerRect.left - innerRect.left
     },
 
-    onClick (event) {
+    onClick (e: MouseEvent): void {
       if (this.disabled || !this.enableClick) return
 
       // 距初始值的目标步数
       const steps = Math.round(
-        (event.clientX - this.sliderLeft) / this.stepWidth
+        (e.clientX - this.sliderLeft) / this.stepWidth
       )
 
       const value = this.min + this.step * steps
@@ -126,16 +106,16 @@ export default Vue.extend({
       this.$emit('change', value)
     },
 
-    onTouchstart () {
+    onTouchstart (): void {
       if (this.disabled) return
 
       this.handlerStartPos = this.getHandlerStartPos()
     },
 
-    onTouchmove (event) {
+    onTouchmove (e: TouchEvent): void {
       if (this.disabled) return
 
-      const touch = getTouch(event)
+      const touch = getTouch(e)
 
       // 距初始值的目标步数
       const steps = Math.round(
@@ -150,4 +130,3 @@ export default Vue.extend({
     },
   },
 })
-</script>
