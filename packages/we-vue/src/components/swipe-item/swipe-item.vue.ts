@@ -1,18 +1,8 @@
-<template>
-  <div class="wv-swipe-item" :style="style">
-    <slot />
-  </div>
-</template>
-
-<script lang="ts">
-// TODO
-// import '../../scss/swipe.scss'
-
 import Vue from 'vue'
 
 // parent swipe
 interface Swipe extends Vue {
-  width: number,
+  width: number
   swipes: Array<any>
 }
 
@@ -40,7 +30,6 @@ export default Vue.extend({
 
   destroyed (): void {
     this.$parent &&
-      (this.$parent as Swipe).swipes.splice((this.$parent as Swipe).swipes.indexOf(this), 1)
+    (this.$parent as Swipe).swipes.splice((this.$parent as Swipe).swipes.indexOf(this), 1)
   },
 })
-</script>

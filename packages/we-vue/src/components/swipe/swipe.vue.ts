@@ -1,35 +1,23 @@
-<template>
-  <div
-    class="wv-swipe"
-    @touchstart="onTouchstart"
-    @touchmove="onTouchmove"
-    @touchend="onTouchend"
-    @touchcancel="onTouchend"
-  >
-    <div
-      :style="wrapperStyle"
-      class="wv-swipe__wrapper"
-      @transitionend="$emit('change', activeIndicator)"
-    >
-      <slot />
-    </div>
-    <div class="wv-swipe__indicators" v-if="showIndicators && count > 1">
-      <i
-        v-for="index in count"
-        :key="index"
-        :class="{ 'wv-swipe__indicator--active': index - 1 === activeIndicator }"
-      />
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
 import '../../scss/swipe.scss'
 
 import Vue from 'vue'
 import { getTouch } from '../../utils'
 
-export default Vue.extend({
+// Utils
+import mixins from '../../utils/mixins'
+
+// Mixins
+import Colorable from '../../mixins/colorable'
+
+interface options extends Vue {
+  timer: any
+  swipes: Array<number>
+  fuck: number
+}
+
+export default mixins<options>(
+  Colorable
+).extend({
   name: 'wv-swipe',
 
   props: {
@@ -77,17 +65,17 @@ export default Vue.extend({
   },
 
   watch: {
-    swipes () {
+    swipes (): void {
       this.initialize()
     },
 
-    defaultIndex () {
+    defaultIndex (): void {
       this.initialize()
     },
   },
 
   computed: {
-    count () {
+    count (): number {
       return this.swipes.length
     },
 
@@ -124,13 +112,13 @@ export default Vue.extend({
       this.autoPlay()
     },
 
-    onTouchstart (event): void {
+    onTouchstart (e: TouchEvent): void {
       if (this.count === 1 && this.noDragWhenSingle) {
         return
       }
 
       clearTimeout(this.timer)
-      const touch = getTouch(event)
+      const touch = getTouch(e)
 
       this.deltaX = 0
       this.direction = ''
@@ -146,12 +134,12 @@ export default Vue.extend({
       }
     },
 
-    onTouchmove (event): void {
+    onTouchmove (e: TouchEvent): void {
       if (this.prevent) {
-        event.preventDefault()
+        e.preventDefault()
       }
 
-      const touch = getTouch(event)
+      const touch = getTouch(e)
 
       this.deltaX = touch.clientX - this.startX
       const deltaY = touch.clientY - this.startY
@@ -225,4 +213,3 @@ export default Vue.extend({
     },
   },
 })
-</script>
