@@ -1,11 +1,3 @@
-<template>
-  <i class="weui-loading" :style="style" v-if="type === 'default'" />
-  <span v-else class="wv-spinner">
-    <i class="iconfont" :class="fontClassName" :style="style" />
-  </span>
-</template>
-
-<script lang="ts">
 import '../../scss/spinner.scss'
 
 import Vue from 'vue'
@@ -29,7 +21,7 @@ export default Vue.extend({
   },
 
   computed: {
-    fontClassName () {
+    fontClassName (): string {
       switch (this.type) {
         case 'snake':
           return 'icon-spinner-1'
@@ -44,7 +36,7 @@ export default Vue.extend({
       }
     },
 
-    style () {
+    style (): object {
       return {
         fontSize: this.size + 'px',
         color: this.color,
@@ -52,4 +44,3 @@ export default Vue.extend({
     },
   },
 })
-</script>

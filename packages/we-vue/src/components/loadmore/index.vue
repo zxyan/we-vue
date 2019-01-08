@@ -3,7 +3,7 @@
     class="weui-loadmore"
     :class="{'weui-loadmore_line': (type === 'line' || type === 'lineDot'), 'weui-loadmore_dot': type === 'lineDot' }"
   >
-    <wv-spinner type="default" v-if="type === 'default'" />
+    <WVSpinner type="default" v-if="type === 'default'" />
     <span class="weui-loadmore__tips" v-text="type === 'lineDot' ? '' : text" />
   </div>
 </template>
@@ -12,13 +12,13 @@
 import Vue from 'vue'
 import '../../scss/loadmore.scss'
 
-import Spinner from '../spinner'
+import WVSpinner from '../spinner'
 
 export default Vue.extend({
   name: 'wv-loadmore',
 
   components: {
-    'wv-spinner': Spinner,
+    WVSpinner,
   },
 
   props: {
