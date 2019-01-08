@@ -39,7 +39,7 @@ export * from './slider'
 export * from './spinner'
 // export * from './swipe'
 // export * from './swipe-item'
-// export * from './switch'
+export * from './switch'
 // // TODO:
 // // export * from './tab'
 export * from './tabbar'

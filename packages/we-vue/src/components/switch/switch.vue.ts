@@ -1,32 +1,3 @@
-<template>
-  <cell :title="title" v-if="isInCell">
-    <wv-switch
-      :is-in-cell="false"
-      slot="ft"
-      v-model="currentValue"
-      :disabled="disabled"
-    />
-  </cell>
-
-  <div
-    class="wv-switch"
-    :class="{ 'wv-switch-on': currentValue, 'wv-switch-disabled': disabled }"
-    @click="onClick"
-    v-else
-  >
-    <div class="background" />
-    <div
-      class="thumb"
-      :style="thumbStyle"
-      @touchstart="onTouchstart"
-      @touchmove="onTouchmove"
-      @touchend="onTouchend"
-      @touchcancel="onTouchend"
-    />
-  </div>
-</template>
-
-<script lang="ts">
 import Vue from 'vue'
 import '../../scss/switch.scss'
 
@@ -64,7 +35,7 @@ export default Vue.extend({
   },
 
   computed: {
-    thumbStyle () {
+    thumbStyle (): object {
       return {
         transition: this.transition,
         transform: `translate3d(${this.offset}px, 0, 0)`,
@@ -77,27 +48,27 @@ export default Vue.extend({
   },
 
   methods: {
-    onClick (event) {
-      event.preventDefault()
+    onClick (e: MouseEvent): void {
+      e.preventDefault()
       if (this.disabled) return
 
       this.currentValue = !this.currentValue
     },
 
-    onTouchstart (event) {
+    onTouchstart (e: TouchEvent): void {
       if (this.disabled) return
 
-      const touch = getTouch(event)
+      const touch = getTouch(e)
 
       this.startX = touch.clientX
       this.startOffset = this.offset
       this.transition = ''
     },
 
-    onTouchmove (event) {
+    onTouchmove (e: TouchEvent): void {
       if (this.disabled) return
 
-      const touch = getTouch(event)
+      const touch = getTouch(e)
       const deltaX = touch.clientX - this.startX
 
       const targetOffset = this.startOffset + deltaX
@@ -111,10 +82,10 @@ export default Vue.extend({
       }
     },
 
-    onTouchend (event) {
+    onTouchend (e: TouchEvent): void {
       if (this.disabled) return
 
-      const touch = getTouch(event)
+      const touch = getTouch(e)
 
       let deltaX = touch.clientX - this.startX
 
@@ -149,4 +120,3 @@ export default Vue.extend({
     },
   },
 })
-</script>
