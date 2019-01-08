@@ -13,8 +13,6 @@ import Colorable from '../../mixins/colorable'
 interface options extends Vue {
   swipeComponent: WVSwipeInstance
   offset: number
-
-  $parent: WVSwipeInstance
 }
 
 export default mixins<options>(

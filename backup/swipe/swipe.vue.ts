@@ -16,7 +16,7 @@ type SwipeItemInstance = InstanceType<typeof SwipeItem>
 
 interface options extends Vue {
   timer: any
-  swipes: Array<SwipeItemInstance>
+  // swipes: Array<SwipeItemInstance>
 }
 
 export default mixins<options>(
