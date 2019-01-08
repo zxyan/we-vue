@@ -26,44 +26,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import '../../scss/radio.scss'
-
-import { PropValidator } from 'vue/types/options'
-
-export default Vue.extend({
-  name: 'wv-radio',
-
-  props: {
-    title: String,
-    align: {
-      type: String,
-      default: 'left',
-    },
-    options: {
-      type: Array,
-      required: true,
-    },
-    value: null as any as PropValidator<any>,
-  },
-
-  data () {
-    return {
-      // TODO
-      currentValue: (this as any).value,
-    }
-  },
-
-  watch: {
-    currentValue (val) {
-      this.$emit('input', val)
-      this.$emit('change', val)
-    },
-
-    value (val) {
-      this.currentValue = val
-    },
-  },
-})
+<script>
+import radio from './radio.vue.ts'
+export default radio
 </script>
