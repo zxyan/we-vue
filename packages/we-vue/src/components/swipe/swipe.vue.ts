@@ -3,22 +3,30 @@ import '../../scss/swipe.scss'
 import Vue from 'vue'
 import { getTouch } from '../../utils'
 
+import SwipeItem from '../swipe-item'
+
 // Utils
 import mixins from '../../utils/mixins'
 
 // Mixins
 import Colorable from '../../mixins/colorable'
 
+// Types
+type SwipeItemInstance = InstanceType<typeof SwipeItem>
+
 interface options extends Vue {
   timer: any
-  swipes: Array<number>
-  fuck: number
+  swipes: Array<SwipeItemInstance>
 }
 
 export default mixins<options>(
   Colorable
 ).extend({
   name: 'wv-swipe',
+
+  provide (): object {
+    return { swipeComponent: this }
+  },
 
   props: {
     height: Number,
@@ -44,15 +52,15 @@ export default mixins<options>(
 
   data () {
     return {
-      width: 0,
-      offset: 0,
-      startX: 0,
-      startY: 0,
-      active: 0,
-      deltaX: 0,
-      swipes: [],
-      direction: '',
-      currentDuration: 0,
+      width: 0 as number,
+      offset: 0 as number,
+      startX: 0 as number,
+      startY: 0 as number,
+      active: 0 as number,
+      deltaX: 0 as number,
+      swipes: [] as Array<SwipeItemInstance>,
+      direction: '' as string,
+      currentDuration: 0 as number,
     }
   },
 
