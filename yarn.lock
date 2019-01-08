@@ -1338,6 +1338,11 @@
     markdown-it-emoji "^1.4.0"
     markdown-it-table-of-contents "^0.4.3"
 
+"@types/dom-inputevent@^1.0.3":
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/@types/dom-inputevent/download/@types/dom-inputevent-1.0.3.tgz#7831e0628a98a04bbac450c95220ded6e04a1f84"
+  integrity sha1-eDHgYoqYoEu6xFDJUiDe1uBKH4Q=
+
 "@types/jest@^23.3.8":
   version "23.3.12"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"

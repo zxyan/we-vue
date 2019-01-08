@@ -3,7 +3,21 @@ import '../../scss/input.scss'
 
 import WvIcon from '../icon/index'
 
-export default Vue.extend({
+// Utils
+import mixins from '../../utils/mixins'
+
+// Mixins
+import Colorable from '../../mixins/colorable'
+
+interface options extends Vue {
+  $refs: {
+    input: HTMLInputElement
+  }
+}
+
+export default mixins<options>(
+  Colorable
+).extend({
   name: 'wv-input',
 
   components: {
@@ -59,7 +73,8 @@ export default Vue.extend({
   },
 
   methods: {
-    handleInput (event) {
+    // TODO: InputEvent types
+    handleInput (event: any) {
       // 当有最大长度属性时，限制过长的输入
       if (this.maxlength && event.target.value.length >= this.maxlength) {
         this.currentValue = ''
@@ -76,11 +91,11 @@ export default Vue.extend({
       }
     },
 
-    focus () {
+    focus (): void {
       this.$refs.input.focus()
     },
 
-    onFocus () {
+    onFocus (): void {
       this.active = true
       this.$emit('focus')
 
@@ -92,7 +107,7 @@ export default Vue.extend({
       }
     },
 
-    onBlur () {
+    onBlur (): void {
       this.active = false
       this.$emit('blur')
 
@@ -104,7 +119,7 @@ export default Vue.extend({
       }
     },
 
-    onChange () {
+    onChange (): void {
       this.$emit('change', this.currentValue)
 
       if (
@@ -115,7 +130,7 @@ export default Vue.extend({
       }
     },
 
-    validate () {
+    validate (): void {
       if (this.pattern) {
         const reg = new RegExp(this.pattern)
         if (!reg.test(this.currentValue)) {
@@ -139,11 +154,11 @@ export default Vue.extend({
   },
 
   watch: {
-    currentValue (val) {
+    currentValue (val): void {
       this.$emit('input', val)
     },
 
-    value (val) {
+    value (val): void {
       this.currentValue = val
     },
   },
