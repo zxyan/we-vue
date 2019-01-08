@@ -5,7 +5,7 @@
       <em class="weui-form-preview__value" v-html="value" />
     </div>
     <div class="weui-form-preview__bd">
-      <div class="weui-form-preview__item" v-for="(item, key, index) in dataItems" :key="key">
+      <div class="weui-form-preview__item" v-for="(item, key) in dataItems" :key="key">
         <label class="weui-form-preview__label">
           {{ item.label }}
         </label>
