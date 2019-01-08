@@ -42,8 +42,8 @@ export * from './spinner'
 // export * from './switch'
 // // TODO:
 // // export * from './tab'
-// export * from './tabbar'
-// export * from './tabbar-item'
+export * from './tabbar'
+export * from './tabbar-item'
 // // TODO:
 // // export * from './tabs'
 // export * from './textarea'
