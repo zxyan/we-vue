@@ -29,19 +29,19 @@ export default mixins(
 
   data () {
     return {
-      currentValue: this.value,
+      internalValue: this.value,
     }
   },
 
   watch: {
-    currentValue (val): void {
+    internalValue (val): void {
       // TODO
       this.$emit('input', val)
       this.$emit('change', val)
     },
 
     value (val): void {
-      this.currentValue = val
+      this.internalValue = val
     },
   },
 })
