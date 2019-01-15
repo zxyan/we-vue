@@ -12,20 +12,17 @@
 </template>
 
 <script>
-// import TopTips from 'we-vue/src/components/top-tips/index.ts'
-
 export default {
-  // TODO
   methods: {
     openTips () {
-      // WvToptips({
-      //   message: '提示信息',
-      //   duration: 3000
-      // })
+      this.$toptips({
+        message: '提示信息',
+        duration: 3000
+      })
     },
 
     closeTips () {
-      // WvToptips.close()
+      this.$toptips.close()
     }
   }
 }

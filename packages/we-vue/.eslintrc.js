@@ -49,6 +49,8 @@ module.exports = {
         'space-infix-ops': 'off',
         'import/export': 'off',
         'no-unused-vars': 'off',
+        'no-inner-declarations': 'off',
+        'no-redeclare': 'off', // TODO
         'typescript/adjacent-overload-signatures': 'error',
         'typescript/member-delimiter-style': ['error', {
           delimiter: 'none'

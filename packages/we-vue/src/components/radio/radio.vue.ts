@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import '../../scss/radio.scss'
 
 // Utils
@@ -23,7 +23,7 @@ export default mixins(
     options: {
       type: Array,
       required: true,
-    },
+    } as PropValidator<Array<any>>,
     value: null as any as PropValidator<any>,
   },
 
@@ -35,7 +35,6 @@ export default mixins(
 
   watch: {
     internalValue (val): void {
-      // TODO
       this.$emit('input', val)
       this.$emit('change', val)
     },

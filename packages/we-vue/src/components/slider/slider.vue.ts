@@ -79,7 +79,7 @@ export default mixins<options>(
     }
   },
 
-  mounted (): void {
+  mounted () {
     this.sliderLeft = this.$refs.inner.offsetLeft
     this.sliderLength = this.$refs.inner.getBoundingClientRect().width
   },

@@ -1,10 +1,7 @@
 import '../../scss/badge.scss'
+import Vue from 'vue'
 
-import mixins from '../../utils/mixins'
-
-import Colorable from '../../mixins/colorable'
-
-export default mixins(Colorable).extend({
+export default Vue.extend({
   name: 'wv-badge',
 
   props: {

@@ -1,5 +1,4 @@
-import Picker from './index.vue'
+import Picker from './picker.vue'
 
 export { Picker }
 export default Picker
-

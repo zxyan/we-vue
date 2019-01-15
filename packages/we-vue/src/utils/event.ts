@@ -15,7 +15,9 @@ if (!isServer) {
   } catch (e) {}
 }
 
-export function on (target: Element, event: string, handler: EventListener, passive = false) {
+// type eventHandler = EventListenerOrEventListenerObject | (evt: Event) => void
+
+export function on (target: Element | Window, event: string, handler: EventListenerOrEventListenerObject, passive = false) {
   !isServer &&
     target.addEventListener(
       event,
@@ -24,6 +26,6 @@ export function on (target: Element, event: string, handler: EventListener, pass
     )
 }
 
-export function off (target: Element, event: string, handler: EventListener) {
+export function off (target: Element | Window, event: string, handler: EventListenerOrEventListenerObject) {
   !isServer && target.removeEventListener(event, handler)
 }
